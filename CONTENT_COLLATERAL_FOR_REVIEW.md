@@ -328,7 +328,125 @@ Email 6 (+30 days): Expandability + long-term value
 
 ---
 
-## SECTION 6: DAILY TRACKING SPREADSHEET
+## SECTION 5B: INSTAGRAM CONTENT (3x/Week)
+
+**Platform**: Instagram + Facebook (linked)  
+**Posting Schedule**: Monday, Wednesday, Friday (morning, 9am ET)
+
+**Post Type 1 (Monday): Product Feature Reel**
+- Format: 15-30 second video
+- Content: Product close-up, feature highlight, spec callout
+- Hook: "This is why..." or "Here's how..."
+- CTA: Link in bio
+
+**Post Type 2 (Wednesday): Carousel or Lifestyle**
+- Format: 5-7 image carousel or single image
+- Content: Behind-the-scenes, lifestyle preparedness aesthetic, luxury angle
+- Hook: "What does energy independence look like?"
+- CTA: Link in bio
+
+**Post Type 3 (Friday): Customer Story or Testimonial**
+- Format: Video or carousel
+- Content: Real customer using F5000, benefits, transformation
+- Hook: Customer name + outcome
+- CTA: "Shop now" link in bio
+
+**Hashtags**: #PreparednessProducts #BackupPower #F5000LFP #PremiumPrep #EnergyIndependence #OffGrid #Homesteading
+
+**12 Weeks Content Ready**: All posts pre-planned with themes
+
+---
+
+## SECTION 5C: TIKTOK CONTENT (3x/Week)
+
+**Platform**: TikTok (@suppliesarelimited)  
+**Posting Schedule**: Monday, Wednesday, Friday (5pm ET - peak viewing)
+
+**Post Type 1 (Monday): Quick Product Demo**
+- Format: 15-20 second video
+- Content: "Here's what F5000 can power in your home"
+- Trending audio: Preparedness/energy independence angle
+- Hook: Start with pain point
+
+**Post Type 2 (Wednesday): Trend Format**
+- Format: 20-30 second video
+- Content: "POV: You need backup power and don't know it yet"
+- Use: Popular TikTok trend format
+- Hook: Relatable scenario
+
+**Post Type 3 (Friday): Behind-the-Scenes or Testimonial**
+- Format: 15-30 second video
+- Content: Casual, authentic, real person using product
+- Tone: Conversational, not polished
+- Hook: Story or surprising fact
+
+**Trend Awareness**: Weekly trending sounds checked + incorporated
+
+**12 Weeks Content Ready**: Video script templates for all themes
+
+---
+
+## SECTION 5D: THREADS CONTENT (2x/Week)
+
+**Platform**: Threads (@suppliesarelimited)  
+**Posting Schedule**: Tuesday, Thursday (10am ET)
+
+**Post Type 1 (Tuesday): Thought Leadership**
+- Format: 500-1,000 character essay
+- Content: Preparedness philosophy, energy independence, grid resilience
+- Tone: Professional but conversational
+- Theme: Industry insights, trends, expert takes
+- CTA: "Learn more at SuppliesAreLimited.com"
+
+**Post Type 2 (Thursday): News or Product Update**
+- Format: 300-500 character post + replies
+- Content: Industry news, product updates, features, specs
+- Tone: Friendly, accessible expert
+- Engagement: Reply to comments, build conversation
+- CTA: Link in bio if relevant
+
+**8 Weeks Content Ready**: Essay templates + topic ideas
+
+---
+
+## SECTION 5E: FACEBOOK CONTENT (4x/Week)
+
+**Platform**: Facebook (linked from Instagram, own strategy)  
+**Posting Schedule**: Monday, Wednesday, Thursday, Saturday
+
+**Post Type 1 (Monday): Cross-Post Instagram Reel**
+- Format: Video reel (from Instagram)
+- Auto-post to Facebook from Instagram
+- Caption: Same as Instagram
+
+**Post Type 2 (Wednesday): Cross-Post Instagram Carousel**
+- Format: Carousel post (from Instagram)
+- Auto-post to Facebook from Instagram
+- Caption: Extended for Facebook audience (older demographic)
+
+**Post Type 3 (Thursday): Long-Form Educational Post**
+- Format: Text post + images (Facebook-native)
+- Content: "How to choose backup power" or "Understanding LiFePO4"
+- Tone: Detailed, helpful, educational
+- Length: 500-800 words
+- CTA: "Learn more at SuppliesAreLimited.com"
+
+**Post Type 4 (Saturday): Customer Story or Community**
+- Format: Video or image + testimonial
+- Content: Real customer success, community highlights
+- Engagement: Encourage comments, replies
+- CTA: Share with friends + link in bio
+
+**Community Strategy**: 
+- Join preparedness groups (10+ relevant communities)
+- Share expertise authentically (not promotional)
+- Mention F5000 naturally when relevant
+
+**12 Weeks Content Ready**: All themes planned + tracked
+
+---
+
+## COMPLETE SOCIAL POSTING SCHEDULE (All 7 Platforms)
 
 **Purpose**: Know what's converting every single day
 
@@ -347,6 +465,46 @@ Email 6 (+30 days): Expandability + long-term value
 - Calculate daily revenue by source
 - Identify best-performing content
 - Adjust next day's strategy
+
+---
+
+## COMPLETE SOCIAL POSTING SCHEDULE (Weekly Overview)
+
+### **Monday**
+- 9am: Instagram Reel (product feature)
+- 10am: LinkedIn Post #1 topic
+- 12pm: TikTok post (product demo)
+- 5pm: Facebook cross-post (Instagram Reel)
+
+### **Tuesday**
+- 9am: Substack Newsletter (if Tuesday posting)
+- 10am: Threads essay (thought leadership)
+
+### **Wednesday**
+- 9am: Instagram Carousel (lifestyle/aesthetic)
+- 10am: LinkedIn Post #2 topic
+- 12pm: TikTok post (trend format)
+- 5pm: Facebook cross-post (Instagram carousel)
+
+### **Thursday**
+- 10am: Threads post (news/update)
+- 1pm: Facebook long-form educational post
+- 5pm: Reddit engagement (comment naturally, if relevant)
+
+### **Friday**
+- 9am: Instagram Story series + Reel (customer/testimonial)
+- 10am: LinkedIn Post #3 topic
+- 12pm: TikTok post (behind-the-scenes/testimonial)
+- 5pm: Reddit participation (helpful comments)
+
+### **Saturday**
+- 9am: Facebook post (customer story/community)
+- 1pm: Weekly review + engagement check
+
+### **Sunday (Planning Day)**
+- Plan Week + review metrics
+- Prep all content
+- Verify links
 
 ---
 

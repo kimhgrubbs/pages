@@ -117,16 +117,105 @@
 
 ---
 
-### **PLATFORM 5: TIK TOK / INSTAGRAM REELS** (Phase 2)
-**Why**: Emerging audience, viral potential, trend participation
+### **PLATFORM 5: INSTAGRAM (Reels + Feed)**
+**Why**: Visual platform, F5000 is photogenic, aesthetic audience
 
-**Strategy**:
-- Behind-the-scenes content
-- Quick product features (15-30 sec)
-- Trending audio with preparedness angle
-- Aesthetic lifestyle content (luxury angle)
+**Strategy**: 3x/week posting
+- **Monday**: Product close-up (reel or carousel)
+- **Wednesday**: Lifestyle/preparedness aesthetic
+- **Friday**: Behind-the-scenes or customer story
 
-**Note**: Lower priority than LinkedIn/Substack/Reddit initially
+**Content Format**:
+- Reels (15-30 sec, trending audio, preparedness angle)
+- Carousel posts (5-7 images telling story)
+- Stories (daily updates, polls, behind-the-scenes)
+
+**Hashtags**: #PreparednessProducts #BackupPower #F5000 #PremiumPrep #EnergyIndependence
+
+**Expected Performance**:
+- 100-200 followers gained/week
+- 20-50 website clicks/week
+- Visual brand building
+
+**Link Strategy**: Bio link to SuppliesAreLimited.com/products/pecron-f5000lfp
+
+---
+
+### **PLATFORM 6: TIKTOK**
+**Why**: Younger audience, viral potential, authentic voice
+
+**Strategy**: 3x/week posting
+- **Monday**: Quick product feature (15-20 sec)
+- **Wednesday**: Trending preparedness angle
+- **Friday**: Customer testimonial or before/after
+
+**Content Format**:
+- Quick product demos (how F5000 works)
+- "POV: You need backup power and don't know it" (trend format)
+- Preparedness tips with product integration
+- Behind-the-scenes (authentic, not polished)
+
+**Tone**: Casual, fun, authentic (different from LinkedIn sophistication)
+
+**Expected Performance**:
+- 50-150 new followers/week
+- Potential viral reach (TikTok algorithm)
+- 10-30 website clicks/week
+
+**Link Strategy**: Bio link to SuppliesAreLimited.com
+
+---
+
+### **PLATFORM 7: THREADS**
+**Why**: Growing platform, preparedness/tech audience, authentic conversation
+
+**Strategy**: 2x/week posting
+- **Tuesday**: Thought leadership (similar to LinkedIn but more casual)
+- **Thursday**: Industry news or product update
+
+**Content Format**:
+- Short-form essays (500-1,000 chars)
+- Thread replies to trending topics
+- Product updates and features
+- Community engagement (replies/discussions)
+
+**Tone**: Professional but conversational (between LinkedIn & Twitter)
+
+**Expected Performance**:
+- 50-100 new followers/week
+- 5-15 website clicks/week
+- Authentic community building
+
+**Link Strategy**: Bio link to SuppliesAreLimited.com
+
+---
+
+### **PLATFORM 8: FACEBOOK**
+**Why**: Older demographic (some preparedness audience), community groups
+
+**Strategy**: 4x/week posting (cross-posted from Instagram)
+- **Monday**: Instagram Reel (cross-post)
+- **Wednesday**: Instagram Carousel (cross-post)
+- **Thursday**: Long-form educational post (Facebook-native)
+- **Saturday**: Community engagement/customer stories
+
+**Content Format**:
+- Cross-posted from Instagram (Reels + Carousels)
+- Longer-form educational content (Facebook-native)
+- Customer testimonials
+- Preparedness tips and insights
+
+**Community Strategy**:
+- Join preparedness Facebook groups (authentic participation, not ads)
+- Share expertise in relevant groups
+- Link to SuppliesAreLimited.com when appropriate
+
+**Expected Performance**:
+- 100-200 new followers/week
+- 30-60 website clicks/week
+- Older demographic reach (40-65 age range)
+
+**Link Strategy**: Bio link to SuppliesAreLimited.com/products/pecron-f5000lfp
 
 ---
 
