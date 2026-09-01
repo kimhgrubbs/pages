@@ -76,91 +76,139 @@
 
 ## DECISIONS NEEDED FROM YOU (5 Questions)
 
-### **DECISION 1: Landing Page Destination**
+### **DECISION 1: Landing Page Destination** ✓ APPROVED
 **Question**: Where should the landing page link to?
 
-Options:
-- [ ] A) Direct to Shopify checkout (one-click purchase)
-- [ ] B) Product description page + checkout option (consideration first)
-- [ ] C) Both (product info + immediate purchase option available)
+**✓ APPROVED ARCHITECTURE**: Website-First (SuppliesAreLimited.com)
+- All "Shop Now" buttons link to SuppliesAreLimited.com (the catalog/website)
+- Website's built-in logic prevents checkout bypass (confirmed impossible as of Sept 1)
+- Affiliate products clearly separated with "Find in Amazon" buttons
+- Direct sales products flow normally to checkout
+- User must browse catalog before purchase (prevents accidental checkout)
 
-**Recommendation**: Option C (maximizes conversion opportunity)
+**Why This Works**:
+- Prevents the checkout-bypass error that killed past sales
+- Differentiates affiliate (Amazon) from direct sales (SuppliesAreLimited)
+- Informed purchase decisions (user sees full product range)
+- Builds brand exposure through website visit
+- Affiliate bypass attempts are completely blocked
+
+**Status**: ✓ Ready to execute with full link verification
 
 ---
 
-### **DECISION 2: Substack Newsletter Themes**
+### **DECISION 2: Substack Newsletter Themes** ✓ APPROVED
 **Question**: Which themes resonate most with your brand?
 
-Options (pick 2 for first 2 newsletters):
-- [ ] "Grid Reliability is Collapsing" (data-driven, alarming)
-- [ ] "The Real Cost of an Outage" (financial angle)
-- [ ] "Why Everyone is Buying Backup Power" (trend-following)
-- [ ] Other: _______________
+**✓ APPROVED THEMES**:
+- Newsletter 1 (Sept 3): "Grid Reliability is Collapsing" (data-driven, research-backed)
+- Newsletter 2 (Sept 10): "Why Everyone is Buying Backup Power" (trend-following, FOMO angle)
+- **PLUS**: Both newsletters include water resources (purification, filtration, storage)
+- **Tone**: "Don't Panic. Pay Attention. Prepare." (research-backed, not alarmist)
 
-**Recommendation**: Mix 1 + 2 (rational fear + financial ROI)
+**Content Pillars**:
+- Power: Backup systems, energy independence, grid resilience
+- Water: Purification, filtration, storage, emergency preparation
+- Lean into "Pay Attention" angle (compelling research, actionable insights)
 
 ---
 
-### **DECISION 3: Email Subject Line (Email 1)**
+### **DECISION 3: Email Subject Line (Email 1)** ✓ APPROVED
 **Question**: Which subject line resonates?
 
-Options:
-- [ ] "Welcome. Here's What Most People Get Wrong About Backup Power." (Educational)
-- [ ] "The One Power Generator That Never Fails" (Bold)
-- [ ] "Why Your Neighbors Are Buying F5000s" (Social proof)
-- [ ] Other: _______________
+**✓ APPROVED**:
+- "Welcome. Here's What Most People Get Wrong About Backup Power." (Educational tone)
 
-**Recommendation**: Option 1 (educational, less pushy for welcome email)
+**Why This Works**:
+- Less pushy than social-proof or bold angles
+- Sets up the 6-email welcome sequence effectively
+- Educational positioning matches premium/soft survivalist audience
+- Builds trust from first touch
+- Natural progression to product education + conversion later in sequence
 
 ---
 
-### **DECISION 4: Brand Positioning**
+### **DECISION 4: Brand Positioning** ✓ APPROVED
 **Question**: Which best describes Supplies Are Limited?
 
-Options:
-- [ ] A) Premium Emergency Preparedness Equipment (luxury angle)
-- [ ] B) The Serious Alternative to Big-Box Generators (alternative angle)
-- [ ] C) Enterprise-Grade Reliability for Everyone (professional angle)
-- [ ] D) Other: _______________
+**✓ APPROVED POSITIONING**:
+- **Primary**: "Resource for the Premium/Soft Survivalist Space"
+- **Target**: High-income professionals (100K+) interested in research-backed preparedness
+- **Positioning Statement**: Enterprise-grade reliability + luxury aesthetic + research-backed solutions
+- **NOT**: Bunker mentality, militia aesthetic, conspiracy-focused
+- **IS**: Sustainable living, energy independence, risk management, lifestyle autonomy
 
-**This affects all messaging. Choose one.**
+**Brand Tagline**: "Don't Panic. Pay Attention. Prepare."
 
-**Recommendation**: A (matches your brand aesthetic and customer base)
+**Core Value Proposition**: 
+- Premium products at direct-to-consumer pricing
+- Curated selection (not everything, only best)
+- Research-backed messaging (every claim has data)
+- Luxury + reliability (not basic, not paranoid)
 
 ---
 
-### **DECISION 5: Content Review Workflow**
+### **DECISION 5: Content Review Workflow** ✓ APPROVED
 **Question**: How do you want to approve content before publishing?
 
-Options:
-- [ ] A) Send me all 12 LinkedIn posts at once for approval
-- [ ] B) Send me 3 posts at a time (batch review)
-- [ ] C) Send me each post 24 hours before publishing (just-in-time)
-- [ ] D) Review on a shared document (Google Docs with comments)
+**✓ APPROVED WORKFLOW**: Option B - Batch Review (3 Posts at a Time)
 
-**Recommendation**: Option B (3 posts at a time, fast feedback cycle)
+**Process**:
+1. I send 3 LinkedIn posts for your review
+2. You approve, request changes, or ask questions
+3. I revise as needed and get final approval
+4. All 3 publish on schedule (Mon, Wed, Fri)
+5. Repeat with posts 4-6, then 7-9, then 10-12
+
+**Why This Works**:
+- Fast feedback cycles (not bottleneck on one post)
+- Consistent batch review timeline (predictable)
+- Quality control maintained on each piece
+- Efficiency (not reviewing every single post in isolation)
+- Clear cadence for publishing schedule
 
 ---
 
 ## CRITICAL VERIFICATIONS (Must Approve)
 
-### **Verification 1: URL Structure**
+### **Verification 1: URL Structure** ✓ UPDATED
 **I will ensure every single link:**
-- [ ] Goes to SuppliesAreLimited.com (not external, not Amazon)
-- [ ] Includes product page (/products/pecron-f5000lfp)
-- [ ] Has UTM parameters (tracks source)
-- [ ] Is tested before publishing (you'll click to verify)
+- [ ] Goes to SuppliesAreLimited.com/?utm_source=... (website catalog, not direct product)
+- [ ] Has UTM parameters (tracks source correctly)
+- [ ] Is tested before publishing (you'll click to verify it loads correctly)
+- [ ] Routes through catalog (prevents checkout bypass)
+
+**Correct Format**:
+```
+SuppliesAreLimited.com/?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch
+SuppliesAreLimited.com/?utm_source=substack&utm_medium=email&utm_campaign=newsletter_week1
+```
+
+**NOT**:
+```
+SuppliesAreLimited.com/products/pecron-f5000lfp (direct to product = bad)
+/checkout (external checkout = bad)
+```
 
 **Status**: Ready to implement ✓
 
 ---
 
-### **Verification 2: Checkout Process**
+### **Verification 2: Checkout & Affiliate Separation** ✓ UPDATED
 **I will ensure:**
-- [ ] "Shop Now" button goes directly to product (not generic checkout)
-- [ ] Affiliate products clearly separated from direct sales
-- [ ] No checkout confusion (user knows what they're buying)
-- [ ] All links point to correct product page
+- [ ] All "Shop Now" links go to SuppliesAreLimited.com (not direct checkout)
+- [ ] Website logic prevents checkout bypass (confirmed impossible)
+- [ ] Affiliate products have "Find in Amazon" buttons (separate, clear)
+- [ ] Affiliate bypass attempts are completely blocked
+- [ ] User must browse catalog before purchase (by design)
+- [ ] No confusion between affiliate + direct sales
+
+**Architecture Verification**:
+1. Click "Shop Now" → lands on SuppliesAreLimited.com catalog
+2. See affiliate products with "Find in Amazon" buttons
+3. See direct sales with normal "Add to Cart" / "Checkout"
+4. **Cannot** bypass catalog to direct checkout (impossible per Sept 1 update)
+5. **Cannot** trick system into affiliate bypass
 
 **Status**: Ready to verify ✓
 
