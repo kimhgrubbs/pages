@@ -171,6 +171,92 @@
             font-size: 18px;
         }
 
+        .preview-toggle {
+            background-color: var(--color-neutral-ivory);
+            border: 1px solid var(--color-neutral-light-gray);
+            color: var(--color-primary-orange);
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+
+        .preview-toggle:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+
+        .preview-content {
+            display: none;
+            margin-top: 24px;
+            padding: 24px;
+            background-color: var(--color-neutral-ivory);
+            border-radius: 4px;
+            border-left: 4px solid var(--color-primary-orange);
+        }
+
+        .preview-content.active {
+            display: block;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .color-box {
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .color-box.orange {
+            background-color: #FF6B35;
+        }
+
+        .color-box.charcoal {
+            background-color: #1A1A1A;
+        }
+
+        .color-box.teal {
+            background-color: #3B8E8E;
+        }
+
+        .color-box.coral {
+            background-color: #E07856;
+        }
+
+        .color-box.success {
+            background-color: #4A7C59;
+        }
+
+        .typography-sample {
+            margin: 16px 0;
+            padding: 16px;
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        .sample-h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .sample-body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #2D2D2D;
+        }
+
         .deliverable-actions {
             display: flex;
             gap: 16px;
@@ -192,27 +278,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary-orange);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #E85A24;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: var(--color-neutral-dark-gray);
-            border: 2px solid var(--color-neutral-light-gray);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--color-primary-orange);
-            color: var(--color-primary-orange);
         }
 
         .btn-approve {
@@ -276,54 +341,6 @@
             font-weight: 600;
         }
 
-        .detail-box {
-            background-color: white;
-            border: 1px solid var(--color-neutral-light-gray);
-            border-radius: 8px;
-            padding: 24px;
-            margin-top: 16px;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-
-        .detail-box h3 {
-            font-family: var(--font-display);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--color-neutral-dark-gray);
-        }
-
-        .detail-box ul {
-            margin-left: 20px;
-            margin-bottom: 12px;
-        }
-
-        .detail-box li {
-            margin-bottom: 8px;
-        }
-
-        .footer {
-            background-color: var(--color-primary-charcoal);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .footer p {
-            margin-bottom: 12px;
-            opacity: 0.9;
-        }
-
-        .footer .launch-date {
-            font-family: var(--font-display);
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 24px;
-            color: var(--color-primary-orange);
-        }
-
         .approval-log {
             background-color: white;
             border: 2px solid var(--color-neutral-light-gray);
@@ -349,6 +366,27 @@
 
         .approval-entry.needs-revision {
             color: var(--color-warning);
+        }
+
+        .footer {
+            background-color: var(--color-primary-charcoal);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .footer .launch-date {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 24px;
+            color: var(--color-primary-orange);
         }
 
         @media (max-width: 768px) {
@@ -387,33 +425,15 @@
     <div class="header">
         <h1>Supplies Are Limited</h1>
         <p>Launch Deliverables Review Dashboard</p>
-        <p style="font-size: 14px; margin-top: 8px;">September 1, 2026 | 20 hours to launch</p>
-        <div class="status">READY FOR APPROVAL</div>
+        <p style="font-size: 14px; margin-top: 8px;">September 1, 2026 | Click to preview, then approve or revise</p>
+        <div class="status">CLICK TO VIEW PREVIEWS</div>
     </div>
 
     <div class="container">
         <div class="summary">
-            <h2>Launch Status Summary</h2>
-            <div class="summary-grid">
-                <div class="summary-stat">
-                    <div class="summary-stat-number">19</div>
-                    <div class="summary-stat-label">Design Assets</div>
-                </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-number">18</div>
-                    <div class="summary-stat-label">Marketing Documents</div>
-                </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-number">6</div>
-                    <div class="summary-stat-label">Email Templates</div>
-                </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-number">100%</div>
-                    <div class="summary-stat-label">Ready to Deploy</div>
-                </div>
-            </div>
-            <p style="color: var(--color-neutral-medium-gray); line-height: 1.8;">
-                All visual design, brand identity, marketing collateral, automation systems, and campaign documentation has been completed and is ready for your review. Click on each section below to see what's included in that deliverable category.
+            <h2>Quick Preview Guide</h2>
+            <p style="color: var(--color-neutral-medium-gray); line-height: 1.8; margin-bottom: 16px;">
+                Click the <strong>"View Preview"</strong> button on each deliverable to see samples of the design, content, or system. Then click <strong>"✓ Approve"</strong> or <strong>"✗ Needs Revision"</strong> to log your feedback.
             </p>
         </div>
 
@@ -432,10 +452,37 @@
                     <li>Typography system (Playfair Display + Inter)</li>
                     <li>Component library (buttons, cards, forms, navigation)</li>
                     <li>Design grid system (8px/16px/24px base)</li>
-                    <li>Usage guidelines and best practices</li>
-                    <li>Dark mode support</li>
-                    <li>Print-ready specifications</li>
                 </ul>
+
+                <button class="preview-toggle" onclick="togglePreview(event, 'preview-brand')">View Preview</button>
+
+                <div class="preview-content" id="preview-brand">
+                    <h3 style="margin-bottom: 16px;">Brand Color Palette</h3>
+                    <div class="color-palette">
+                        <div class="color-box orange">Orange<br>#FF6B35</div>
+                        <div class="color-box charcoal">Black<br>#1A1A1A</div>
+                        <div class="color-box teal">Teal<br>#3B8E8E</div>
+                        <div class="color-box coral">Coral<br>#E07856</div>
+                        <div class="color-box success">Success<br>#4A7C59</div>
+                    </div>
+
+                    <h3 style="margin: 24px 0 16px 0;">Typography System</h3>
+                    <div class="typography-sample">
+                        <div class="sample-h1">Playfair Display — Display Font</div>
+                        <p style="font-size: 14px; color: #666; margin-top: 8px;">Used for headings and hero text</p>
+                    </div>
+
+                    <div class="typography-sample">
+                        <div class="sample-body">Inter / System Font — Body Text<br>Used for all body copy, descriptions, and UI text. Clear, readable, premium feel.</div>
+                    </div>
+
+                    <h3 style="margin: 24px 0 16px 0;">Component Preview</h3>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button style="background-color: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">Primary Button</button>
+                        <button style="background-color: white; color: #1A1A1A; padding: 12px 24px; border: 2px solid #1A1A1A; border-radius: 4px; font-weight: 600; cursor: pointer;">Secondary Button</button>
+                    </div>
+                </div>
+
                 <div class="deliverable-actions">
                     <button class="btn btn-approve" data-approve="Brand Guidelines">✓ Approve</button>
                     <button class="btn btn-disapprove" data-disapprove="Brand Guidelines">✗ Needs Revision</button>
@@ -447,39 +494,35 @@
                     <div class="deliverable-name">Email Template System</div>
                     <span class="deliverable-type design">Design</span>
                 </div>
-                <p class="deliverable-description">5 premium HTML email templates ready for Klavioy integration. Welcome sequence (Email 1-5) with luxury aesthetic, brand colors, and responsive design.</p>
+                <p class="deliverable-description">5 premium HTML email templates ready for Klavioy integration. Welcome sequence with luxury aesthetic, brand colors, and responsive design.</p>
                 <ul class="deliverable-features">
                     <li>Email 1: Welcome to Supplies Are Limited</li>
                     <li>Email 2: Pecron F5000 Deep Dive</li>
                     <li>Email 3: Big Berkey Water Security</li>
                     <li>Email 4: LETPOT Food Independence</li>
                     <li>Email 5: Testimonial & Social Proof</li>
-                    <li>Email 6: Exclusive Member Offer</li>
-                    <li>Fully responsive for mobile/desktop</li>
                 </ul>
+
+                <button class="preview-toggle" onclick="togglePreview(event, 'preview-email')">View Preview</button>
+
+                <div class="preview-content" id="preview-email">
+                    <h3 style="margin-bottom: 16px;">Email 1: Welcome (Sample Header)</h3>
+                    <div style="background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%); color: white; padding: 40px; border-radius: 4px; text-align: center;">
+                        <div style="font-family: Georgia, serif; font-size: 28px; font-weight: 700; margin-bottom: 12px;">Supplies Are Limited</div>
+                        <div style="font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase;">Don't Panic. Pay Attention. Prepare.</div>
+                    </div>
+
+                    <div style="background: white; padding: 40px; margin-top: 16px; border-radius: 4px; border: 1px solid #E8E6E2;">
+                        <h2 style="font-family: Georgia, serif; font-size: 32px; font-weight: 700; margin-bottom: 16px;">Welcome. Here's What Most People Get Wrong.</h2>
+                        <p style="font-size: 16px; line-height: 1.7; color: #2D2D2D; margin-bottom: 16px;">You just joined people who pay attention. Most people ignore the signals until it's too late.</p>
+                        <button style="background-color: #FF6B35; color: white; padding: 14px 32px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 16px;">Explore Supplies Are Limited</button>
+                    </div>
+                    <p style="font-size: 12px; color: #999; margin-top: 16px; text-align: center;">This is a sample of the responsive, premium email design for all 5 templates.</p>
+                </div>
+
                 <div class="deliverable-actions">
                     <button class="btn btn-approve" data-approve="Email Templates">✓ Approve</button>
                     <button class="btn btn-disapprove" data-disapprove="Email Templates">✗ Needs Revision</button>
-                </div>
-            </div>
-
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">Additional Design Reference Files</div>
-                    <span class="deliverable-type design">Design</span>
-                </div>
-                <p class="deliverable-description">Supporting design documentation including technical specs, photography guidelines, and social media advertising specifications.</p>
-                <ul class="deliverable-features">
-                    <li>Design system reference (quick technical lookup)</li>
-                    <li>Photography and video production guide</li>
-                    <li>Social media advertising specs (all platforms)</li>
-                    <li>Platform dimensions and aspect ratios</li>
-                    <li>Color grading and lighting specifications</li>
-                    <li>Video production guidelines</li>
-                </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="Design References">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="Design References">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -490,85 +533,40 @@
 
             <div class="deliverable">
                 <div class="deliverable-header">
-                    <div class="deliverable-name">Instagram/Facebook 12-Week Calendar</div>
+                    <div class="deliverable-name">Social Media Calendars (IG/FB/TikTok/Threads)</div>
                     <span class="deliverable-type content">Content</span>
                 </div>
-                <p class="deliverable-description">Complete 12-week social media strategy with all 36 posts pre-written. Ready to upload to Buffer or Meta Business Suite for automated posting.</p>
+                <p class="deliverable-description">140+ pieces of pre-written content across all platforms. Instagram/Facebook (36 posts), TikTok (84 videos), Threads (16 posts), LinkedIn (12 posts), Substack (4 newsletters).</p>
                 <ul class="deliverable-features">
-                    <li>36 posts across 12 weeks (3x/week: Mon/Wed/Fri 9am ET)</li>
-                    <li>Complete captions for every post</li>
-                    <li>Optimized hashtag rotation strategy</li>
-                    <li>Content type breakdown (Reels, Carousels, Testimonials)</li>
-                    <li>UTM parameter tracking for all links</li>
-                    <li>Post-specific engagement strategies</li>
-                    <li>Expected results and performance targets</li>
+                    <li>Instagram/Facebook: 36 posts, 3x/week (Mon/Wed/Fri 9am ET)</li>
+                    <li>TikTok: 84 videos, 3x/week (Mon/Wed/Fri 5pm ET), first 4 weeks fully scripted</li>
+                    <li>Threads: 16 posts, 2x/week (Tue/Thu 10am ET)</li>
+                    <li>LinkedIn: 12 posts, 3x/week</li>
+                    <li>Substack: 4 newsletters, weekly</li>
                 </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="Instagram/Facebook Calendar">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="Instagram/Facebook Calendar">✗ Needs Revision</button>
-                </div>
-            </div>
 
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">TikTok 12-Week Content Calendar</div>
-                    <span class="deliverable-type content">Content</span>
-                </div>
-                <p class="deliverable-description">84 video concepts for 12 weeks of TikTok deployment (3x/week). Complete with hooks, CTAs, trending audio recommendations, and detailed first-month scripts.</p>
-                <ul class="deliverable-features">
-                    <li>84 video concepts (12 weeks × 3x/week)</li>
-                    <li>First 4 weeks detailed scripts with hooks</li>
-                    <li>Content rotation by theme (Product Demo, Education, POV, Testimonial)</li>
-                    <li>Trending audio integration strategy</li>
-                    <li>Posting schedule (Mon/Wed/Fri 5pm ET)</li>
-                    <li>Expected metrics (24,000-36,000 views Month 1)</li>
-                    <li>Hashtag strategy with rotation</li>
-                </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="TikTok Calendar">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="TikTok Calendar">✗ Needs Revision</button>
-                </div>
-            </div>
+                <button class="preview-toggle" onclick="togglePreview(event, 'preview-social')">View Sample Posts</button>
 
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">Threads 8-Week Launch Strategy</div>
-                    <span class="deliverable-type content">Content</span>
-                </div>
-                <p class="deliverable-description">16 pre-written Threads posts (2x/week) with thought leadership essays and news updates. Scheduled for automated posting via Meta Business Suite.</p>
-                <ul class="deliverable-features">
-                    <li>16 posts for 8 weeks (2x/week: Tue/Thu 10am ET)</li>
-                    <li>Thought leadership essay format</li>
-                    <li>Engagement playbook with 8 reply templates</li>
-                    <li>Community management strategies</li>
-                    <li>Complete caption copy ready to paste</li>
-                    <li>Three-pillar content framework (Grid, Water, Food)</li>
-                    <li>Negative comment handling procedures</li>
-                </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="Threads Strategy">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="Threads Strategy">✗ Needs Revision</button>
-                </div>
-            </div>
+                <div class="preview-content" id="preview-social">
+                    <h3 style="margin-bottom: 16px;">Sample LinkedIn Post</h3>
+                    <div style="background: white; border: 1px solid #E8E6E2; border-radius: 4px; padding: 24px; margin-bottom: 24px;">
+                        <p style="font-size: 16px; line-height: 1.8; color: #2D2D2D; margin-bottom: 16px;"><strong>Pay Attention: Your Grid Has a Problem</strong></p>
+                        <p style="font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 16px;">The grid is failing faster than anyone admits. Texas 2021. California blackouts. This year alone? Dozens of major failures.</p>
+                        <p style="font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 16px;">Smart people prepare. The Pecron F5000LFP isn't paranoia. It's insurance.</p>
+                        <button style="background-color: #FF6B35; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 14px;">Explore Supplies Are Limited →</button>
+                        <p style="font-size: 12px; color: #999; margin-top: 16px;">#BackupPower #EnergyIndependence #Preparedness</p>
+                    </div>
 
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">LinkedIn & Substack Content</div>
-                    <span class="deliverable-type content">Content</span>
+                    <h3 style="margin-bottom: 16px;">Sample TikTok Concept (Week 1)</h3>
+                    <div style="background: #F0F0F0; border-radius: 4px; padding: 24px; text-align: center;">
+                        <p style="font-weight: 600; margin-bottom: 12px;">F5000 Demo — 18 seconds</p>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Hook (0-2s): "This battery outlasts blackouts"<br>Demo (2-15s): Unboxing, specs, charging<br>CTA (15-18s): "Link in bio"</p>
+                    </div>
                 </div>
-                <p class="deliverable-description">Professional content strategy across LinkedIn (12 posts) and Substack newsletter (4 pre-written newsletters) targeting premium/soft survivalism audience.</p>
-                <ul class="deliverable-features">
-                    <li>12 complete LinkedIn posts</li>
-                    <li>4 pre-written Substack newsletters</li>
-                    <li>LinkedIn 3x/week posting schedule</li>
-                    <li>Educational deep-dive format for Substack</li>
-                    <li>Three-pillar resilience narrative</li>
-                    <li>Email list growth strategy</li>
-                    <li>Hashtag strategy for B2C professionals</li>
-                </ul>
+
                 <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="LinkedIn & Substack">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="LinkedIn & Substack">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Social Media Content">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Social Media Content">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -579,43 +577,63 @@
 
             <div class="deliverable">
                 <div class="deliverable-header">
-                    <div class="deliverable-name">Instagram/Facebook Automation System</div>
+                    <div class="deliverable-name">Platform Automation (Buffer/Meta Business Suite)</div>
                     <span class="deliverable-type automation">Automation</span>
                 </div>
-                <p class="deliverable-description">Complete automation setup for Instagram/Facebook with Buffer integration, daily monitoring system, and weekly analytics framework.</p>
+                <p class="deliverable-description">Complete automation setup for Instagram, Facebook, TikTok, and Threads. Zero manual posting after setup. Daily monitoring system included.</p>
                 <ul class="deliverable-features">
-                    <li>Platform setup guide (Buffer or Meta Business Suite)</li>
-                    <li>Content upload workflow documentation</li>
+                    <li>Instagram/Facebook: Automated via Buffer ($15/month) or free Meta Business Suite</li>
+                    <li>TikTok: Automated via Buffer with trending audio integration</li>
+                    <li>Threads: Automated via Meta Business Suite (free, 75-day scheduling)</li>
                     <li>Daily engagement monitoring system (5 min/day)</li>
-                    <li>Weekly analytics review process (20 min/week)</li>
-                    <li>Hashtag performance tracking</li>
-                    <li>Comment response templates (20+ variations)</li>
-                    <li>Crisis management procedures</li>
+                    <li>Weekly analytics and optimization process</li>
                 </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="Instagram/Facebook Automation">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="Instagram/Facebook Automation">✗ Needs Revision</button>
-                </div>
-            </div>
 
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">TikTok Automation Implementation</div>
-                    <span class="deliverable-type automation">Automation</span>
+                <button class="preview-toggle" onclick="togglePreview(event, 'preview-automation')">View Setup Summary</button>
+
+                <div class="preview-content" id="preview-automation">
+                    <h3 style="margin-bottom: 16px;">Automation Timeline</h3>
+                    <div style="background: white; border-left: 4px solid #FF6B35; padding: 20px; border-radius: 4px; margin-bottom: 16px;">
+                        <p style="font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">Phase 1: Setup (30-60 minutes)</p>
+                        <p style="font-size: 14px; color: #666;">Create accounts, connect platforms, configure posting times</p>
+                    </div>
+                    <div style="background: white; border-left: 4px solid #FF6B35; padding: 20px; border-radius: 4px; margin-bottom: 16px;">
+                        <p style="font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">Phase 2: Upload Content (1-2 hours)</p>
+                        <p style="font-size: 14px; color: #666;">Upload all 140+ posts to scheduling tools, verify links and captions</p>
+                    </div>
+                    <div style="background: white; border-left: 4px solid #FF6B35; padding: 20px; border-radius: 4px; margin-bottom: 16px;">
+                        <p style="font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">Phase 3: Automate (Ongoing)</p>
+                        <p style="font-size: 14px; color: #666;">100% automated posting, 30 min daily oversight for engagement</p>
+                    </div>
+
+                    <h3 style="margin: 24px 0 16px 0;">Expected Automated Posting Schedule</h3>
+                    <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
+                        <tr style="background: #F0F0F0;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #DDD;">Platform</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #DDD;">Schedule</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #DDD;">Volume</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #DDD;">Instagram/Facebook</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">Mon/Wed/Fri 9am ET</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">36 posts</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #DDD;">TikTok</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">Mon/Wed/Fri 5pm ET</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">84 videos</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid #DDD;">Threads</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">Tue/Thu 10am ET</td>
+                            <td style="padding: 12px; border: 1px solid #DDD;">16 posts</td>
+                        </tr>
+                    </table>
                 </div>
-                <p class="deliverable-description">Complete TikTok automation strategy with Buffer setup, performance tracking, and weekly optimization process. 100% automated posting, 30 min daily oversight.</p>
-                <ul class="deliverable-features">
-                    <li>Buffer account setup and configuration</li>
-                    <li>Trending audio integration workflow</li>
-                    <li>Performance metrics dashboard</li>
-                    <li>Daily metrics logging system</li>
-                    <li>Weekly trend analysis process</li>
-                    <li>Monthly performance reporting</li>
-                    <li>Contingency & troubleshooting plans</li>
-                </ul>
+
                 <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="TikTok Automation">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="TikTok Automation">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Platform Automation">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Platform Automation">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -624,19 +642,46 @@
                     <div class="deliverable-name">Daily Performance Tracking System</div>
                     <span class="deliverable-type automation">Automation</span>
                 </div>
-                <p class="deliverable-description">Automated Google Sheets tracking with Apps Script. Daily data collection from Google Analytics, Shopify, and Klavioy. Automatic daily and weekly email reports.</p>
+                <p class="deliverable-description">Fully automated daily and weekly performance reports. Google Sheets + Google Apps Script collects data from Google Analytics, Shopify, and Klavioy automatically.</p>
                 <ul class="deliverable-features">
-                    <li>Google Sheets template with formulas</li>
-                    <li>Google Apps Script automation</li>
-                    <li>Daily data collection (6:30pm CDT Shopify, 7pm Klavioy)</li>
-                    <li>Automatic AOV and conversion rate calculation</li>
-                    <li>Daily email reporting (7:30pm CDT)</li>
-                    <li>Weekly performance summary emails</li>
-                    <li>Anomaly detection and alerts</li>
+                    <li>Automatic daily data collection (6:30pm CDT from Shopify, 7pm from Klavioy)</li>
+                    <li>Automatic calculations (AOV, conversion rate, email metrics)</li>
+                    <li>Daily email report at 7:30pm CDT with all channel data</li>
+                    <li>Weekly summary email every Sunday at 10am with ROI analysis</li>
+                    <li>Anomaly alerts (revenue drops 30%+, email opens below 10%, etc.)</li>
                 </ul>
+
+                <button class="preview-toggle" onclick="togglePreview(event, 'preview-tracking')">View Tracking Dashboard</button>
+
+                <div class="preview-content" id="preview-tracking">
+                    <h3 style="margin-bottom: 16px;">Sample Daily Performance Report</h3>
+                    <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid #E8E6E2; margin-bottom: 16px; font-size: 14px;">
+                        <p style="font-weight: 600; margin-bottom: 12px;">📊 DAILY PERFORMANCE — Sept 2, 2026</p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                            <div style="padding: 12px; background: #F8F7F5; border-radius: 4px;">
+                                <p style="font-size: 12px; color: #666; margin-bottom: 4px;">Total Visitors</p>
+                                <p style="font-size: 24px; font-weight: 700; color: #FF6B35;">245</p>
+                            </div>
+                            <div style="padding: 12px; background: #F8F7F5; border-radius: 4px;">
+                                <p style="font-size: 12px; color: #666; margin-bottom: 4px;">Email Signups</p>
+                                <p style="font-size: 24px; font-weight: 700; color: #FF6B35;">28</p>
+                            </div>
+                            <div style="padding: 12px; background: #F8F7F5; border-radius: 4px;">
+                                <p style="font-size: 12px; color: #666; margin-bottom: 4px;">Orders</p>
+                                <p style="font-size: 24px; font-weight: 700; color: #FF6B35;">3</p>
+                            </div>
+                            <div style="padding: 12px; background: #F8F7F5; border-radius: 4px;">
+                                <p style="font-size: 12px; color: #666; margin-bottom: 4px;">Revenue</p>
+                                <p style="font-size: 24px; font-weight: 700; color: #FF6B35;">$6,597</p>
+                            </div>
+                        </div>
+                        <p style="font-size: 12px; color: #999; margin-top: 12px;">By Channel: LinkedIn (52 visitors, 1 order) | TikTok (118 visitors, 1 order) | Email (75 visitors, 1 order)</p>
+                    </div>
+                </div>
+
                 <div class="deliverable-actions">
-                    <button class="btn btn-approve" data-approve="Tracking Automation">✓ Approve</button>
-                    <button class="btn btn-disapprove" data-disapprove="Tracking Automation">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Tracking System">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Tracking System">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -646,7 +691,7 @@
             <div class="section-title">Your Approvals</div>
             <div id="approvalsContainer" class="approval-log">
                 <p style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">
-                    No approvals logged yet — Click approve/revision buttons above to log your feedback
+                    No approvals logged yet — Click approve/revision buttons to log your feedback
                 </p>
             </div>
         </div>
@@ -654,13 +699,22 @@
 
     <div class="footer">
         <p style="font-size: 18px; font-weight: 600;">✓ LAUNCH READY</p>
-        <p>All deliverables are complete and ready for your approval.</p>
-        <p>Once you approve these items, we can proceed with immediate deployment.</p>
+        <p>Preview the deliverables above, then approve or flag for revision.</p>
+        <p>Once you approve, we deploy immediately at Wednesday 8am CDT.</p>
         <div class="launch-date">Wednesday, September 2, 2026 @ 8:00 AM CDT</div>
     </div>
 
     <script>
         let approvals = {};
+
+        function togglePreview(e, previewId) {
+            e.preventDefault();
+            const preview = document.getElementById(previewId);
+            const btn = e.target;
+
+            preview.classList.toggle('active');
+            btn.textContent = preview.classList.contains('active') ? 'Hide Preview' : 'View Preview';
+        }
 
         document.addEventListener('click', function(e) {
             if (e.target.hasAttribute('data-approve')) {
@@ -674,7 +728,7 @@
                 const name = e.target.getAttribute('data-disapprove');
                 approvals[name] = 'needs-revision';
                 updateApprovalsDisplay();
-                alert(`⚠ ${name} marked as NEEDS REVISION - please provide feedback`);
+                alert(`⚠ ${name} marked as NEEDS REVISION`);
             }
         });
 
@@ -684,7 +738,7 @@
             const needsRevision = Object.keys(approvals).filter(k => approvals[k] === 'needs-revision');
 
             if (approved.length === 0 && needsRevision.length === 0) {
-                container.innerHTML = '<p style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">No approvals logged yet — Click approve/revision buttons above to log your feedback</p>';
+                container.innerHTML = '<p style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">No approvals logged yet — Click approve/revision buttons to log your feedback</p>';
                 return;
             }
 
