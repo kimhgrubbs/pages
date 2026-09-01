@@ -92,7 +92,6 @@
             padding: 32px;
             margin-bottom: 24px;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .deliverable:hover {
@@ -234,31 +233,6 @@
             background-color: #C86646;
         }
 
-        .status-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .status-badge.ready {
-            background-color: rgba(74, 124, 89, 0.2);
-            color: var(--color-success);
-        }
-
-        .status-badge.pending {
-            background-color: rgba(199, 139, 47, 0.2);
-            color: var(--color-warning);
-        }
-
-        .status-badge.approved {
-            background-color: rgba(74, 124, 89, 0.25);
-            color: #2d5a3d;
-        }
-
         .summary {
             background-color: white;
             border: 2px solid var(--color-primary-orange);
@@ -302,50 +276,31 @@
             font-weight: 600;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            overflow: auto;
-        }
-
-        .modal-content {
-            background-color: var(--color-neutral-ivory);
-            margin: 50px auto;
-            padding: 40px;
+        .detail-box {
+            background-color: white;
             border: 1px solid var(--color-neutral-light-gray);
-            width: 90%;
-            max-width: 900px;
             border-radius: 8px;
-            max-height: 80vh;
-            overflow-y: auto;
+            padding: 24px;
+            margin-top: 16px;
+            font-size: 15px;
+            line-height: 1.8;
         }
 
-        .modal-header {
+        .detail-box h3 {
             font-family: var(--font-display);
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 24px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
             color: var(--color-neutral-dark-gray);
-            border-bottom: 2px solid var(--color-primary-orange);
-            padding-bottom: 16px;
         }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+        .detail-box ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
         }
 
-        .close:hover {
-            color: black;
+        .detail-box li {
+            margin-bottom: 8px;
         }
 
         .footer {
@@ -367,6 +322,33 @@
             font-weight: 700;
             margin-top: 24px;
             color: var(--color-primary-orange);
+        }
+
+        .approval-log {
+            background-color: white;
+            border: 2px solid var(--color-neutral-light-gray);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .approval-entry {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-neutral-light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .approval-entry:last-child {
+            border-bottom: none;
+        }
+
+        .approval-entry.approved {
+            color: var(--color-success);
+        }
+
+        .approval-entry.needs-revision {
+            color: var(--color-warning);
         }
 
         @media (max-width: 768px) {
@@ -414,11 +396,11 @@
             <h2>Launch Status Summary</h2>
             <div class="summary-grid">
                 <div class="summary-stat">
-                    <div class="summary-stat-number">8</div>
+                    <div class="summary-stat-number">19</div>
                     <div class="summary-stat-label">Design Assets</div>
                 </div>
                 <div class="summary-stat">
-                    <div class="summary-stat-number">15</div>
+                    <div class="summary-stat-number">18</div>
                     <div class="summary-stat-label">Marketing Documents</div>
                 </div>
                 <div class="summary-stat">
@@ -431,7 +413,7 @@
                 </div>
             </div>
             <p style="color: var(--color-neutral-medium-gray); line-height: 1.8;">
-                All visual design, brand identity, marketing collateral, automation systems, and campaign documentation has been completed and is ready for your review. Click on each deliverable below to preview, view details, or approve for launch.
+                All visual design, brand identity, marketing collateral, automation systems, and campaign documentation has been completed and is ready for your review. Click on each section below to see what's included in that deliverable category.
             </p>
         </div>
 
@@ -447,7 +429,7 @@
                 <p class="deliverable-description">Complete brand identity system with premium color palette, typography rules, component library, and design guidelines for consistent application across all platforms.</p>
                 <ul class="deliverable-features">
                     <li>Color palette with hex codes (Orange/Black primary, Teal/Coral/Blue secondary)</li>
-                    <li>Typography system (Playfair Display + Inter font stack)</li>
+                    <li>Typography system (Playfair Display + Inter)</li>
                     <li>Component library (buttons, cards, forms, navigation)</li>
                     <li>Design grid system (8px/16px/24px base)</li>
                     <li>Usage guidelines and best practices</li>
@@ -455,9 +437,8 @@
                     <li>Print-ready specifications</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('brandGuidelinesPreview')">Preview Full Guidelines</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Brand Guidelines', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Brand Guidelines', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Brand Guidelines">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Brand Guidelines">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -473,13 +454,32 @@
                     <li>Email 3: Big Berkey Water Security</li>
                     <li>Email 4: LETPOT Food Independence</li>
                     <li>Email 5: Testimonial & Social Proof</li>
+                    <li>Email 6: Exclusive Member Offer</li>
                     <li>Fully responsive for mobile/desktop</li>
-                    <li>Brand-consistent design with orange CTAs</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('emailTemplatePreview')">Preview Email 1</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Email Templates', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Email Templates', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Email Templates">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Email Templates">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Additional Design Reference Files</div>
+                    <span class="deliverable-type design">Design</span>
+                </div>
+                <p class="deliverable-description">Supporting design documentation including technical specs, photography guidelines, and social media advertising specifications.</p>
+                <ul class="deliverable-features">
+                    <li>Design system reference (quick technical lookup)</li>
+                    <li>Photography and video production guide</li>
+                    <li>Social media advertising specs (all platforms)</li>
+                    <li>Platform dimensions and aspect ratios</li>
+                    <li>Color grading and lighting specifications</li>
+                    <li>Video production guidelines</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-approve" data-approve="Design References">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Design References">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -504,9 +504,8 @@
                     <li>Expected results and performance targets</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('instagramPreview')">View Sample Posts</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Instagram/Facebook Calendar', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Instagram/Facebook Calendar', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Instagram/Facebook Calendar">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Instagram/Facebook Calendar">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -526,9 +525,8 @@
                     <li>Hashtag strategy with rotation</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('tiktokPreview')">View TikTok Strategy</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('TikTok Calendar', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('TikTok Calendar', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="TikTok Calendar">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="TikTok Calendar">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -548,51 +546,29 @@
                     <li>Negative comment handling procedures</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('threadsPreview')">View Threads Strategy</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Threads Strategy', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Threads Strategy', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Threads Strategy">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Threads Strategy">✗ Needs Revision</button>
                 </div>
             </div>
 
             <div class="deliverable">
                 <div class="deliverable-header">
-                    <div class="deliverable-name">LinkedIn 12-Post Launch Series</div>
+                    <div class="deliverable-name">LinkedIn & Substack Content</div>
                     <span class="deliverable-type content">Content</span>
                 </div>
-                <p class="deliverable-description">12 LinkedIn posts targeting premium/soft survivalism audience. Complete with copy, hashtags, and posting schedule (3x/week).</p>
+                <p class="deliverable-description">Professional content strategy across LinkedIn (12 posts) and Substack newsletter (4 pre-written newsletters) targeting premium/soft survivalism audience.</p>
                 <ul class="deliverable-features">
                     <li>12 complete LinkedIn posts</li>
-                    <li>3x/week posting schedule</li>
-                    <li>Professional brand voice</li>
-                    <li>UTM parameter tracking</li>
-                    <li>Hashtag strategy for B2C professional audience</li>
-                    <li>Call-to-action optimization</li>
-                    <li>Expected engagement targets</li>
-                </ul>
-                <div class="deliverable-actions">
-                    <button class="btn btn-approve" onclick="approveDeliverable('LinkedIn Posts', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('LinkedIn Posts', 'needs revision')">✗ Needs Revision</button>
-                </div>
-            </div>
-
-            <div class="deliverable">
-                <div class="deliverable-header">
-                    <div class="deliverable-name">Substack Newsletter Strategy</div>
-                    <span class="deliverable-type content">Content</span>
-                </div>
-                <p class="deliverable-description">Complete Substack strategy with 4 pre-written newsletters for launch. Educational content positioning with three-pillar resilience framework.</p>
-                <ul class="deliverable-features">
-                    <li>4 newsletters pre-written and ready to publish</li>
-                    <li>Weekly publication schedule</li>
-                    <li>Deep-dive educational content format</li>
-                    <li>Three-pillar resilience narrative (Power, Water, Food)</li>
+                    <li>4 pre-written Substack newsletters</li>
+                    <li>LinkedIn 3x/week posting schedule</li>
+                    <li>Educational deep-dive format for Substack</li>
+                    <li>Three-pillar resilience narrative</li>
                     <li>Email list growth strategy</li>
-                    <li>Call-to-action optimization</li>
-                    <li>Expected subscriber growth targets</li>
+                    <li>Hashtag strategy for B2C professionals</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-approve" onclick="approveDeliverable('Substack Strategy', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Substack Strategy', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="LinkedIn & Substack">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="LinkedIn & Substack">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -617,9 +593,8 @@
                     <li>Crisis management procedures</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('igFacebookAutomation')">View Setup Guide</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Instagram/Facebook Automation', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Instagram/Facebook Automation', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Instagram/Facebook Automation">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Instagram/Facebook Automation">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -639,9 +614,8 @@
                     <li>Contingency & troubleshooting plans</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('tiktokAutomation')">View Automation Setup</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('TikTok Automation', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('TikTok Automation', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="TikTok Automation">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="TikTok Automation">✗ Needs Revision</button>
                 </div>
             </div>
 
@@ -661,9 +635,8 @@
                     <li>Anomaly detection and alerts</li>
                 </ul>
                 <div class="deliverable-actions">
-                    <button class="btn btn-primary" onclick="openModal('trackingAutomation')">View Tracking Setup</button>
-                    <button class="btn btn-approve" onclick="approveDeliverable('Tracking Automation', 'approved')">✓ Approve</button>
-                    <button class="btn btn-disapprove" onclick="approveDeliverable('Tracking Automation', 'needs revision')">✗ Needs Revision</button>
+                    <button class="btn btn-approve" data-approve="Tracking Automation">✓ Approve</button>
+                    <button class="btn btn-disapprove" data-disapprove="Tracking Automation">✗ Needs Revision</button>
                 </div>
             </div>
         </div>
@@ -671,200 +644,11 @@
         <!-- APPROVAL SUMMARY SECTION -->
         <div class="section">
             <div class="section-title">Your Approvals</div>
-            <div style="background-color: white; border: 2px solid var(--color-neutral-light-gray); border-radius: 8px; padding: 32px;">
-                <div id="approvalsContainer" style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">
-                    <p style="font-size: 18px; margin-bottom: 12px;">No approvals logged yet</p>
-                    <p style="font-size: 14px;">Click the approve/revision buttons above to log your feedback</p>
-                </div>
+            <div id="approvalsContainer" class="approval-log">
+                <p style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">
+                    No approvals logged yet — Click approve/revision buttons above to log your feedback
+                </p>
             </div>
-        </div>
-    </div>
-
-    <!-- MODALS -->
-    <div id="brandGuidelinesModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('brandGuidelinesModal')">&times;</span>
-            <div class="modal-header">Brand Guidelines System</div>
-            <p>The complete brand guidelines document includes:</p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
-                <li><strong>Color Palette:</strong> Orange #FF6B35, Black #1A1A1A, Teal #3B8E8E, Coral #E07856, with neutrals and accent colors with full hex/RGB codes</li>
-                <li><strong>Typography:</strong> Playfair Display (display), Inter (body), IBM Plex Mono (code) with complete font scale</li>
-                <li><strong>Components:</strong> Buttons, cards, forms, navigation, hero sections, all with hover states and disabled states</li>
-                <li><strong>Grid System:</strong> 8px base with 16px and 24px options for spacing consistency</li>
-                <li><strong>Dark Mode:</strong> Full support with CSS variables for theme switching</li>
-                <li><strong>Usage Guide:</strong> When to use each color, typography rules, component best practices</li>
-            </ul>
-            <p><a href="brand-guidelines.html" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ Open Full Guidelines in New Window</a></p>
-        </div>
-    </div>
-
-    <div id="emailTemplateModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('emailTemplateModal')">&times;</span>
-            <div class="modal-header">Email Template System</div>
-            <p>5 premium HTML email templates ready for Klavioy integration:</p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
-                <li><strong>Email 1 (Welcome):</strong> Introduces Supplies Are Limited with three-pillar positioning</li>
-                <li><strong>Email 2 (Pecron):</strong> Deep dive into F5000LFP backup power system</li>
-                <li><strong>Email 3 (Berkey):</strong> Water security and filtration focus</li>
-                <li><strong>Email 4 (LETPOT):</strong> Food independence through hydroponics</li>
-                <li><strong>Email 5 (Testimonial):</strong> Social proof and customer success stories</li>
-            </ul>
-            <p style="margin-top: 20px;">All templates feature:</p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Responsive design (mobile and desktop)</li>
-                <li>Brand colors (orange buttons, charcoal headers)</li>
-                <li>Professional typography</li>
-                <li>Clear call-to-action buttons</li>
-                <li>Premium aesthetic matching brand guidelines</li>
-            </ul>
-            <p><a href="email-template-01-welcome.html" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ Preview Email 1 (Welcome)</a></p>
-        </div>
-    </div>
-
-    <div id="instagramModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('instagramModal')">&times;</span>
-            <div class="modal-header">Instagram/Facebook 12-Week Calendar</div>
-            <p>36 complete social media posts organized by theme and content type:</p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
-                <li><strong>Week 1-4:</strong> Power & Protection (Pecron focus)</li>
-                <li><strong>Week 5-8:</strong> Water Security & Independence (Berkey focus)</li>
-                <li><strong>Week 9-12:</strong> Food & Community (LETPOT + lifestyle)</li>
-            </ul>
-            <p style="margin-top: 20px;">Content rotation pattern (repeats every 2 weeks):</p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li><strong>Monday 9am ET:</strong> Product Reel (15-30 sec video demo)</li>
-                <li><strong>Wednesday 9am ET:</strong> Carousel Post (5-7 image educational content)</li>
-                <li><strong>Friday 9am ET:</strong> Testimonial/Lifestyle (customer story or product in use)</li>
-            </ul>
-            <p><a href="README.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete Calendar Document</a></p>
-        </div>
-    </div>
-
-    <div id="tiktokModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('tiktokModal')">&times;</span>
-            <div class="modal-header">TikTok 12-Week Content Strategy</div>
-            <p>84 video concepts for maximum reach and engagement:</p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
-                <li><strong>Month 1:</strong> Product demos, trend formats, testimonials (24,000-36,000 expected views)</li>
-                <li><strong>Month 2:</strong> Education, problem/solution, behind-the-scenes</li>
-                <li><strong>Month 3:</strong> Success stories, case studies, community engagement</li>
-            </ul>
-            <p style="margin-top: 20px;">First 4 weeks include detailed scripts:</p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Week 1: F5000 Demo, Unprepared POV, Testimonial</li>
-                <li>Week 2: F5000 vs Generators, Unprepared Trend, Unboxing</li>
-                <li>Week 3: Water Problem, Berkey Demo, Testimonial</li>
-                <li>Week 4: LETPOT Intro, Supply Chain POV, Time-Lapse</li>
-            </ul>
-            <p><a href="TIKTOK_LAUNCH_REPORT.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete TikTok Strategy</a></p>
-        </div>
-    </div>
-
-    <div id="threadsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('threadsModal')">&times;</span>
-            <div class="modal-header">Threads 8-Week Launch Strategy</div>
-            <p>16 thought-leadership posts + complete engagement playbook:</p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
-                <li><strong>Weeks 1-2:</strong> Grid reliability crisis (3 posts)</li>
-                <li><strong>Weeks 3-4:</strong> Water independence (4 posts)</li>
-                <li><strong>Weeks 5-6:</strong> Food security (3 posts)</li>
-                <li><strong>Weeks 7-8:</strong> Three-pillar framework + CTA (3 posts)</li>
-            </ul>
-            <p style="margin-top: 20px;">Complete engagement toolkit includes:</p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>8 reply templates for common questions</li>
-                <li>Negative comment handling strategies</li>
-                <li>Community building approach</li>
-                <li>CTA optimization tactics</li>
-            </ul>
-            <p><a href="THREADS_AUTOMATION_STRATEGY.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete Threads Strategy</a></p>
-        </div>
-    </div>
-
-    <div id="igFacebookAutomationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('igFacebookAutomationModal')">&times;</span>
-            <div class="modal-header">Instagram/Facebook Automation System</div>
-            <p><strong>Setup Process (30 minutes):</strong></p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
-                <li>Create Buffer account ($15/month) or use Meta Business Suite (free)</li>
-                <li>Connect Instagram and Facebook accounts</li>
-                <li>Set posting schedule and timezone</li>
-                <li>Upload content and captions</li>
-                <li>Verify link tracking and UTM parameters</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Daily Operations (5 min/day):</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Verify posts published correctly</li>
-                <li>Respond to comments and DMs</li>
-                <li>Log engagement metrics</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Weekly Review (20 min/week):</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Analyze which posts performed best</li>
-                <li>Check hashtag performance</li>
-                <li>Document learnings for next week</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="tiktokAutomationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('tiktokAutomationModal')">&times;</span>
-            <div class="modal-header">TikTok Automation Implementation</div>
-            <p><strong>Phase 1: Setup (5 hours)</strong></p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
-                <li>Convert TikTok account to Business Account</li>
-                <li>Set up Buffer.com integration</li>
-                <li>Configure Google Analytics tracking</li>
-                <li>Create performance spreadsheet</li>
-                <li>Prepare video production</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Phase 2: Content Upload (2 hours)</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Upload all 84 videos to Buffer</li>
-                <li>Set posting schedule (Mon/Wed/Fri 5pm ET)</li>
-                <li>Add captions and hashtags</li>
-                <li>Verify link in bio</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Phase 3: Daily Operations (30 min/day)</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Verify post published</li>
-                <li>Respond to comments</li>
-                <li>Log metrics</li>
-                <li>Engage with community</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="trackingAutomationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('trackingAutomationModal')">&times;</span>
-            <div class="modal-header">Daily Performance Tracking System</div>
-            <p><strong>Automated Data Collection:</strong></p>
-            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
-                <li>6:30pm CDT: Shopify order and revenue data</li>
-                <li>7:00pm CDT: Klavioy email metrics (opens, clicks)</li>
-                <li>7:15pm CDT: Automatic calculations (AOV, conversion rate)</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Daily Report (emailed at 7:30pm CDT):</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Daily visitors and traffic sources</li>
-                <li>Daily orders and revenue by channel</li>
-                <li>Email signups and open rates</li>
-                <li>Anomaly alerts (if revenue drops 30%+)</li>
-            </ul>
-            <p style="margin-top: 20px;"><strong>Weekly Report (every Sunday at 10am):</strong></p>
-            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
-                <li>Channel performance ranking (ROI, conversion rate)</li>
-                <li>Top performing content</li>
-                <li>Week-over-week comparison</li>
-                <li>Recommendations for next week</li>
-            </ul>
         </div>
     </div>
 
@@ -876,46 +660,31 @@
     </div>
 
     <script>
-        function openModal(modalName) {
-            const modal = document.getElementById(modalName + 'Modal');
-            if (modal) {
-                modal.style.display = 'block';
-            }
-        }
-
-        function closeModal(modalName) {
-            const modal = document.getElementById(modalName);
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-
         let approvals = {};
 
-        function approveDeliverable(name, status) {
-            approvals[name] = status;
-            updateApprovalsDisplay();
-
-            if (status === 'approved') {
+        document.addEventListener('click', function(e) {
+            if (e.target.hasAttribute('data-approve')) {
+                const name = e.target.getAttribute('data-approve');
+                approvals[name] = 'approved';
+                updateApprovalsDisplay();
                 alert(`✓ ${name} marked as APPROVED for launch`);
-            } else if (status === 'needs revision') {
+            }
+
+            if (e.target.hasAttribute('data-disapprove')) {
+                const name = e.target.getAttribute('data-disapprove');
+                approvals[name] = 'needs-revision';
+                updateApprovalsDisplay();
                 alert(`⚠ ${name} marked as NEEDS REVISION - please provide feedback`);
             }
-        }
+        });
 
         function updateApprovalsDisplay() {
             const container = document.getElementById('approvalsContainer');
             const approved = Object.keys(approvals).filter(k => approvals[k] === 'approved');
-            const needsRevision = Object.keys(approvals).filter(k => approvals[k] === 'needs revision');
+            const needsRevision = Object.keys(approvals).filter(k => approvals[k] === 'needs-revision');
 
             if (approved.length === 0 && needsRevision.length === 0) {
-                container.innerHTML = '<p style="font-size: 18px; margin-bottom: 12px;">No approvals logged yet</p><p style="font-size: 14px;">Click the approve/revision buttons above to log your feedback</p>';
+                container.innerHTML = '<p style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">No approvals logged yet — Click approve/revision buttons above to log your feedback</p>';
                 return;
             }
 
@@ -923,20 +692,20 @@
 
             if (approved.length > 0) {
                 html += '<div style="margin-bottom: 24px;"><p style="font-weight: 600; color: var(--color-success); margin-bottom: 12px;">✓ APPROVED (' + approved.length + ')</p>';
-                html += '<ul style="list-style: none; line-height: 2;">';
+                html += '<div>';
                 approved.forEach(item => {
-                    html += '<li style="color: var(--color-neutral-dark-gray); padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-success);">✓</span>' + item + '</li>';
+                    html += '<div class="approval-entry approved"><span>' + item + '</span><span>✓</span></div>';
                 });
-                html += '</ul></div>';
+                html += '</div></div>';
             }
 
             if (needsRevision.length > 0) {
                 html += '<div style="margin-bottom: 24px;"><p style="font-weight: 600; color: var(--color-warning); margin-bottom: 12px;">⚠ NEEDS REVISION (' + needsRevision.length + ')</p>';
-                html += '<ul style="list-style: none; line-height: 2;">';
+                html += '<div>';
                 needsRevision.forEach(item => {
-                    html += '<li style="color: var(--color-neutral-dark-gray); padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-warning);">⚠</span>' + item + '</li>';
+                    html += '<div class="approval-entry needs-revision"><span>' + item + '</span><span>⚠</span></div>';
                 });
-                html += '</ul></div>';
+                html += '</div></div>';
             }
 
             if (approved.length + needsRevision.length > 0) {
