@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media & Advertising Template Specifications</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2D2D2D;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 56px 0 24px 0;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            max-width: 65ch;
+        }
+
+        .intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #5A5A5A;
+            margin-bottom: 40px;
+            max-width: 70ch;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: #E8E6E2;
+            margin: 64px 0 40px 0;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .platform-card {
+            border: 1px solid #E8E6E2;
+            padding: 32px;
+            border-radius: 4px;
+            background-color: #F8F7F5;
+        }
+
+        .platform-card h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+            background-color: #FFFFFF;
+            border: 1px solid #E8E6E2;
+        }
+
+        .spec-table th {
+            background-color: #F8F7F5;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #E8E6E2;
+        }
+
+        .spec-table td {
+            padding: 12px;
+            border-bottom: 1px solid #E8E6E2;
+            font-size: 14px;
+        }
+
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-box {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .size-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9A9490;
+            margin-bottom: 4px;
+        }
+
+        .size-value {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1A1A1A;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 24px;
+            border-radius: 4px;
+        }
+
+        .template-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #1A1A1A;
+        }
+
+        .template-desc {
+            font-size: 14px;
+            color: #9A9490;
+            line-height: 1.6;
+        }
+
+        .copy-tips {
+            background-color: #F0FFF4;
+            border-left: 4px solid #4A7C59;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .copy-tips h4 {
+            margin-top: 0;
+        }
+
+        .copy-tips ul {
+            margin-left: 24px;
+            padding: 0;
+        }
+
+        .copy-tips li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .note {
+            background-color: #FFF5F5;
+            border-left: 4px solid #E07856;
+            padding: 20px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+
+        .note h4 {
+            margin-top: 0;
+        }
+
+        .color-guide {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .color-item {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 16px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #9A9490;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            background-color: #F8F7F5;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Social Media & Advertising Template Specifications</h1>
+        <p class="intro">Complete technical specifications for all social platforms and advertising channels. Includes dimensions, design standards, text guidelines, and brand color usage.</p>
+
+        <div class="section-divider"></div>
+
+        <h2>LinkedIn Templates (12 Variations)</h2>
+
+        <p>Professional, research-backed content for decision-makers and executives. Mix educational, promotional, and thought-leadership content.</p>
+
+        <div class="platform-grid">
+            <div class="platform-card">
+                <h3>LinkedIn Image Post</h3>
+                <div class="size-box">
+                    <div class="size-label">Dimensions</div>
+                    <div class="size-value">1200 × 627 px</div>
+                </div>
+                <p><strong>Format:</strong> Single image post<br><strong>Text:</strong> 150–200 characters headline + caption</p>
+                <p><strong>Design:</strong> Brand colors prominently featured (orange accent, charcoal text). Left-aligned text. Generous margins.</p>
+                <p><strong>Variations:</strong> Statistics, testimonials, thought leadership, product benefits</p>
+            </div>
+
+            <div class="platform-card">
+                <h3>LinkedIn Document (Carousel)</h3>
+                <div class="size-box">
+                    <div class="size-label">Dimensions</div>
+                    <div class="size-value">1080 × 1440 px (per slide)</div>
+                </div>
+                <p><strong>Format:</strong> Multi-page document<br><strong>Pages:</strong> 3–5 slides for maximum engagement</p>
+                <p><strong>Design:</strong> Consistent branded cover + content pages. Numbered pages. Clear call-to-action on final slide.</p>
+                <p><strong>Content:</strong> Research summaries, guides, industry reports, preparation checklists</p>
+            </div>
+
+            <div class="platform-card">
+                <h3>LinkedIn Article Preview</h3>
+                <div class="size-box">
+                    <div class="size-label">Featured Image</div>
+                    <div class="size-value">1200 × 627 px</div>
+                </div>
+                <p><strong>Format:</strong> Native LinkedIn article<br><strong>Length:</strong> 800–2000 words</p>
+                <p><strong>Preview Image:</strong> Bold headline text overlay. Brand color accent bar. Professional image background.</p>
+                <p><strong>Content:</strong> Thought leadership, research-backed insights, professional preparation strategies</p>
+            </div>
+
+            <div class="platform-card">
+                <h3>LinkedIn Video Thumbnail</h3>
+                <div class="size-box">
+                    <div class="size-label">Dimensions</div>
+                    <div class="size-value">1200 × 627 px</div>
+                </div>
+                <p><strong>Format:</strong> Video preview<br><strong>Video:</strong> 15–60 second professional video</p>
+                <p><strong>Design:</strong> Bold text overlay. Brand colors. High contrast. Readable at thumbnail size.</p>
+                <p><strong>Content:</strong> Product demonstrations, expert interviews, preparation insights</p>
+            </div>
+
+            <div class="platform-card">
+                <h3>LinkedIn Company Banner</h3>
+                <div class="size-box">
+                    <div class="size-label">Dimensions</div>
+                    <div class="size-value">1500 × 500 px</div>
+                </div>
+                <p><strong>Design:</strong> Company logo, tagline, and brand colors. Professional, premium aesthetic.</p>
+                <p><strong>Messaging:</strong> "Research-Backed Resilience for Professionals"</p>
+                <p><strong>Update Frequency:</strong> Seasonal or campaign-based (minimum quarterly)</p>
+            </div>
+
+            <div class="platform-card">
+                <h3>LinkedIn Newsletter Header</h3>
+                <div class="size-box">
+                    <div class="size-label">Dimensions</div>
+                    <div class="size-value">1200 × 400 px</div>
+                </div>
+                <p><strong>Design:</strong> Professional masthead with logo, newsletter title, and visual element.</p>
+                <p><strong>Color:</strong> Charcoal background with orange accent. Bold, readable typography.</p>
+                <p><strong>Messaging:</strong> Newsletter name, frequency, and value proposition</p>
+            </div>
+        </div>
+
+        <h3>LinkedIn Content Themes (12 Variations)</h3>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-name">1. Statistic Post</div>
+                <div class="template-desc">Research-backed data visualization. Large number + context. Brand color highlight.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">2. Quote/Testimonial</div>
+                <div class="template-desc">Professional testimonial with author photo. Clean layout emphasizing credibility.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">3. Product Benefit</div>
+                <div class="template-desc">Feature highlight with use-case scenario. Text-heavy design conveying value.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">4. Case Study</div>
+                <div class="template-desc">Before/after comparison or success story. Problem-solution framework.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">5. Thought Leadership</div>
+                <div class="template-desc">Industry insight or research finding. Expert positioning. Educational tone.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">6. Checklist</div>
+                <div class="template-desc">Actionable list (5–10 items). Preparation guide or tips. Downloadable resource teaser.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">7. Comparison</div>
+                <div class="template-desc">Product comparison or traditional vs. modern approaches. Side-by-side layout.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">8. Expert Interview Teaser</div>
+                <div class="template-desc">Featured expert photo + quote + topic. Video link prominent.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">9. Industry News Commentary</div>
+                <div class="template-desc">Thought on relevant news. "What this means for professionals" angle.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">10. FAQ</div>
+                <div class="template-desc">Common questions answered briefly. Educational, helpful tone.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">11. Event/Webinar Promotion</div>
+                <div class="template-desc">Upcoming event teaser. Date, topic, registration link. Professional imagery.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">12. Company Culture/Mission</div>
+                <div class="template-desc">Team moments, brand values, company story. Humanizing, authentic positioning.</div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Instagram Templates (15+ Variations)</h2>
+
+        <h3>Instagram Feed Post</h3>
+
+        <div class="size-box">
+            <div class="size-label">Square (Standard Feed)</div>
+            <div class="size-value">1080 × 1080 px</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Portrait (Carousel/Video)</div>
+            <div class="size-value">1080 × 1350 px</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Landscape</div>
+            <div class="size-value">1080 × 566 px</div>
+        </div>
+
+        <p><strong>Caption Strategy:</strong> 150–300 characters. Hook first line, then story/insight. Call-to-action at end (link in bio).</p>
+        <p><strong>Hashtags:</strong> 20–30 relevant hashtags (industry, product, lifestyle). Mix popular and niche tags.</p>
+
+        <h3>Instagram Stories</h3>
+
+        <div class="size-box">
+            <div class="size-label">Vertical Format</div>
+            <div class="size-value">1080 × 1920 px</div>
+        </div>
+
+        <p><strong>Text Overlay:</strong> Large, readable text (44px+). White or brand orange. Limited to 1–2 lines maximum.</p>
+        <p><strong>Brand Elements:</strong> Logo sticker, product name, link sticker. 24-hour expiration, refresh daily.</p>
+
+        <p><strong>Story Types (12 Variations):</strong></p>
+        <ul style="margin: 16px 0 24px 32px; font-size: 15px;">
+            <li>Product feature highlight</li>
+            <li>Behind-the-scenes team moment</li>
+            <li>Customer testimonial/review</li>
+            <li>Quick tip or preparation hack</li>
+            <li>Poll or question (engagement)</li>
+            <li>Limited-time offer countdown</li>
+            <li>Research finding or statistic</li>
+            <li>Blog/article link share</li>
+            <li>Event announcement</li>
+            <li>User-generated content repost</li>
+            <li>Team member spotlight</li>
+            <li>Daily gratitude/motivation message</li>
+        </ul>
+
+        <h3>Instagram Reel Thumbnail</h3>
+
+        <div class="size-box">
+            <div class="size-label">Dimensions</div>
+            <div class="size-value">1080 × 1920 px (vertical)</div>
+        </div>
+
+        <p><strong>Duration:</strong> 15–60 seconds (15–30 second optimal for social algorithm)</p>
+        <p><strong>Hook Text:</strong> 0–2 seconds with bold text overlay conveying value/intrigue</p>
+        <p><strong>Content:</strong> Product demo, preparation tips, lifestyle inspiration, educational content</p>
+        <p><strong>Call-to-Action:</strong> Final frame with brand link/follow prompt</p>
+
+        <h3>Instagram Carousel (Multi-Image Post)</h3>
+
+        <div class="size-box">
+            <div class="size-label">Per Slide</div>
+            <div class="size-value">1080 × 1350 px</div>
+        </div>
+
+        <p><strong>Slides:</strong> 3–10 images per carousel</p>
+        <p><strong>Caption:</strong> Hook on slide 1, call-to-action inviting swipe, story across slides</p>
+        <p><strong>Template Types:</strong> Step-by-step guides, product feature breakdown, before/after, image gallery</p>
+
+        <h3>Color Usage for Instagram</h3>
+
+        <div class="color-guide">
+            <div class="color-item">
+                <div class="color-swatch" style="background-color: #FF6B35;"></div>
+                <div class="color-name">Pecron Orange</div>
+                <div class="color-code">#FF6B35</div>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background-color: #3B8E8E;"></div>
+                <div class="color-name">Berkey Teal</div>
+                <div class="color-code">#3B8E8E</div>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background-color: #E07856;"></div>
+                <div class="color-name">LETPOT Coral</div>
+                <div class="color-code">#E07856</div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>TikTok (20+ Video Templates)</h2>
+
+        <h3>TikTok Video Specs</h3>
+
+        <div class="size-box">
+            <div class="size-label">Vertical Format</div>
+            <div class="size-value">1080 × 1920 px (9:16 aspect ratio)</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Duration</div>
+            <div class="size-value">15–60 seconds (15–30 optimal)</div>
+        </div>
+
+        <p><strong>Thumbnail Specs:</strong> 1280 × 720 px with bold text overlay and brand colors</p>
+
+        <p><strong>Hook Strategy:</strong> First 3 seconds must capture attention. Text overlay, surprising visual, or compelling question.</p>
+
+        <p><strong>TikTok Trends:</strong> Participate in relevant trends (dance, sound, format) while maintaining brand voice.</p>
+
+        <h3>TikTok Content Themes (20+ Variations)</h3>
+
+        <ul style="margin: 24px 0 24px 32px; font-size: 15px; column-count: 2; column-gap: 32px;">
+            <li>Product feature demonstration</li>
+            <li>Preparation myth-busting</li>
+            <li>Quick tips (30-second how-tos)</li>
+            <li>User testimonial/review</li>
+            <li>Behind-the-scenes team moment</li>
+            <li>Trending audio + product feature</li>
+            <li>Before/after transformation</li>
+            <li>Educational content segment</li>
+            <li>Duet or stitch opportunity setup</li>
+            <li>Comparison (traditional vs. modern)</li>
+            <li>Challenge participation or creation</li>
+            <li>Team member day-in-life</li>
+            <li>Customer reaction/unboxing</li>
+            <li>Research finding visualization</li>
+            <li>Lifestyle inspiration content</li>
+            <li>Entertainment + brand integration</li>
+            <li>Preparation hacks or life hacks</li>
+            <li>Product use-case scenarios</li>
+            <li>Expert interview or Q&A segment</li>
+            <li>Community spotlight/user-generated content</li>
+        </ul>
+
+        <div class="section-divider"></div>
+
+        <h2>Google Ads (Search & Display)</h2>
+
+        <h3>Google Responsive Search Ads</h3>
+
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Specification</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Headline 1</strong></td>
+                    <td>30 characters max. Lead with benefit/product name.</td>
+                    <td>"Emergency Power for Professionals"</td>
+                </tr>
+                <tr>
+                    <td><strong>Headline 2</strong></td>
+                    <td>30 characters max. Support headline 1 or add unique selling point.</td>
+                    <td>"Tested 24-Hour Backup Systems"</td>
+                </tr>
+                <tr>
+                    <td><strong>Headline 3</strong></td>
+                    <td>30 characters max. Call-to-action or urgency (optional).</td>
+                    <td>"Save $400 on Complete System"</td>
+                </tr>
+                <tr>
+                    <td><strong>Description 1</strong></td>
+                    <td>90 characters max. Explain value and differentiation.</td>
+                    <td>"Premium preparation for high-income professionals. Research-backed resilience products."</td>
+                </tr>
+                <tr>
+                    <td><strong>Description 2</strong></td>
+                    <td>90 characters max. Add proof points or limited-time offer.</td>
+                    <td>"Join 50,000+ professionals prepared for the unexpected. Free shipping on orders $500+."</td>
+                </tr>
+                <tr>
+                    <td><strong>Display URL</strong></td>
+                    <td>Branded URL. Keeps it simple (domain.com/products)</td>
+                    <td>suppliesarelimited.com/pecron</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Google Display Ads</h3>
+
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-name">Square (300×300 px)</div>
+                <div class="template-desc">Small square. Use for sidebar placement. Product image + brand color accent + CTA text.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">Medium Rectangle (300×250 px)</div>
+                <div class="template-desc">Most common. Product image + headline + CTA. Sufficient space for details.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">Leaderboard (728×90 px)</div>
+                <div class="template-desc">Horizontal top-of-page banner. Bold headline + logo + CTA. Limited space requires clear hierarchy.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">Half Page (300×600 px)</div>
+                <div class="template-desc">Vertical sidebar banner. Product image + headline + value statement + CTA.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">Wide Skyscraper (160×600 px)</div>
+                <div class="template-desc">Narrow vertical banner. Minimal text. Focus on visuals and logo. Clear CTA.</div>
+            </div>
+            <div class="template-card">
+                <div class="template-name">Mobile Banner (320×50 px)</div>
+                <div class="template-desc">Mobile top banner. Logo + single word headline + CTA link. Minimal design.</div>
+            </div>
+        </div>
+
+        <p><strong>Design Standards for All Display Ads:</strong></p>
+        <ul style="margin: 16px 0 24px 32px; font-size: 15px;">
+            <li>Brand color (orange) accent bar or button</li>
+            <li>High-quality product image (front-center)</li>
+            <li>Large, readable headline (sans-serif, 18px+)</li>
+            <li>4.5:1 contrast ratio for text</li>
+            <li>Clear call-to-action button</li>
+            <li>Logo placement in corner (not obstructing product)</li>
+            <li>No more than 5 elements per ad</li>
+            <li>Export as PNG/GIF with appropriate DPI</li>
+        </ul>
+
+        <h3>Google Shopping Ads</h3>
+
+        <div class="size-box">
+            <div class="size-label">Product Image</div>
+            <div class="size-value">Minimum 800×800 px (PNG, JPG, or GIF)</div>
+        </div>
+
+        <p><strong>Image Requirements:</strong> Product takes up at least 75% of image area. Clean white background. High resolution. No watermarks or promotional text.</p>
+
+        <div class="section-divider"></div>
+
+        <h2>Facebook & Instagram Ads</h2>
+
+        <h3>Facebook Feed Ads</h3>
+
+        <div class="size-box">
+            <div class="size-label">Image Ad</div>
+            <div class="size-value">1080 × 1080 px (1:1 ratio)</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Carousel Ad (per card)</div>
+            <div class="size-value">1080 × 1080 px or 1200 × 628 px</div>
+        </div>
+
+        <p><strong>Copy Strategy:</strong> 125–150 characters for headline. 90–125 characters for primary text. Leads with benefit, ends with CTA.</p>
+
+        <p><strong>Visual Strategy:</strong> Product-focused 60%, lifestyle/benefit 40%. Brand colors prominent. High contrast for mobile readability.</p>
+
+        <h3>Facebook Video Ads</h3>
+
+        <div class="size-box">
+            <div class="size-label">Aspect Ratio</div>
+            <div class="size-value">1:1 (square), 4:5 (vertical), 16:9 (horizontal)</div>
+        </div>
+
+        <p><strong>Duration:</strong> 15–30 seconds optimal. Thumb-stop first 3 seconds.</p>
+        <p><strong>Audio:</strong> Captions required (sound-off viewing is default). Music/voiceover clear and professional.</p>
+        <p><strong>Call-to-Action Button:</strong> "Learn More", "Shop Now", "Get Started" options at bottom of video.</p>
+
+        <div class="section-divider"></div>
+
+        <h2>Email Advertising Specifications</h2>
+
+        <div class="size-box">
+            <div class="size-label">Email Width</div>
+            <div class="size-value">600px (mobile-optimized)</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Hero Image</div>
+            <div class="size-value">600 × 300 px</div>
+        </div>
+
+        <p><strong>Template Structure:</strong></p>
+        <ul style="margin: 16px 0 24px 32px; font-size: 15px;">
+            <li>Preheader text (40–50 chars) - draws recipients in</li>
+            <li>Logo/header (100px height)</li>
+            <li>Hero image or color block (600px width)</li>
+            <li>Main CTA button (prominent, orange #FF6B35)</li>
+            <li>Body copy (16px, left-aligned)</li>
+            <li>Supporting CTA</li>
+            <li>Footer with unsubscribe + company info</li>
+        </ul>
+
+        <p><strong>Font Guidelines:</strong> Use system fonts only (Arial, Helvetica, Georgia). No Google Fonts in email. Fallback fonts critical.</p>
+
+        <div class="section-divider"></div>
+
+        <h2>Substack Newsletter & Threads</h2>
+
+        <h3>Substack Publication Header</h3>
+
+        <div class="size-box">
+            <div class="size-label">Publication Logo</div>
+            <div class="size-value">Minimum 300px width (preferably square)</div>
+        </div>
+
+        <p><strong>Design:</strong> Icon or logo mark. Recognizable at small sizes (favicon). Brand colors incorporated.</p>
+
+        <h3>Substack Post Social Sharing Image</h3>
+
+        <div class="size-box">
+            <div class="size-label">Dimensions</div>
+            <div class="size-value">1200 × 627 px</div>
+        </div>
+
+        <p><strong>Content:</strong> Publication name + episode/article title + key visual. Brand colors used throughout.</p>
+
+        <h3>Threads Profile Setup</h3>
+
+        <div class="size-box">
+            <div class="size-label">Profile Picture</div>
+            <div class="size-value">Square (400×400px minimum)</div>
+        </div>
+
+        <div class="size-box">
+            <div class="size-label">Header Image</div>
+            <div class="size-value">Aspect 16:9 (1200×675px minimum)</div>
+        </div>
+
+        <p><strong>Profile Photo:</strong> Company logo or branded avatar mark. Brand colors. Professional appearance.</p>
+        <p><strong>Header Image:</strong> Brand visual conveying mission. Use tagline "Research-Backed Resilience" with supporting imagery.</p>
+
+        <div class="note">
+            <h4>Important Note</h4>
+            <p>All social media and advertising templates should be created in Figma or Adobe Suite with reusable components and color libraries for efficiency. Export in multiple formats (PNG 2x retina, WebP, GIF variations) for optimal platform compatibility.</p>
+        </div>
+
+    </div>
+</body>
+</html>

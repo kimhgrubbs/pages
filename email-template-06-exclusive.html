@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Member Offer - Limited Time</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2D2D2D;
+            background-color: #F8F7F5;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border: 1px solid #E8E6E2;
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #FF6B35 0%, #E85A24 50%, #3B8E8E 100%);
+            color: #FFFFFF;
+            padding: 48px 32px;
+            text-align: center;
+        }
+        .header-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .header-banner h1 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .header-banner p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 48px 32px;
+        }
+        .content h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 32px 0 16px 0;
+            color: #1A1A1A;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #2D2D2D;
+        }
+        .offer-box {
+            background: linear-gradient(135deg, #F8F7F5 0%, #FFFFFF 100%);
+            border: 2px solid #FF6B35;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .offer-tag {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #FF6B35;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .offer-headline {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .offer-description {
+            font-size: 16px;
+            color: #9A9490;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .timer-box {
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .timer-label {
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        .timer-value {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .bundle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .bundle-item {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 16px;
+            border-radius: 4px;
+        }
+        .bundle-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .bundle-name {
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+        .bundle-price {
+            font-size: 13px;
+            color: #9A9490;
+            text-decoration: line-through;
+        }
+        .bundle-new-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-top: 4px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #E8E6E2;
+            margin: 32px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #FF6B35;
+            color: #FFFFFF;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 24px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .cta-button:hover {
+            background-color: #E85A24;
+        }
+        .fine-print {
+            background-color: #F8F7F5;
+            border: 1px dashed #E8E6E2;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #9A9490;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #F8F7F5;
+            padding: 32px;
+            text-align: center;
+            border-top: 1px solid #E8E6E2;
+        }
+        .footer-text {
+            font-size: 13px;
+            color: #9A9490;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .footer-links {
+            font-size: 13px;
+            margin-top: 16px;
+        }
+        .footer-links a {
+            color: #FF6B35;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <div class="header-badge">Exclusive Member Only</div>
+            <h1>Complete Your System</h1>
+            <p>Bundle Your First Three Products + Save $400</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <p>You're a Supplies Are Limited member. That means you get access to offers nobody else does.</p>
+
+            <p>This week only: purchase all three core products together and save $400 on the complete system.</p>
+
+            <div class="offer-box">
+                <div class="offer-tag">Limited Time Bundle</div>
+                <div class="offer-headline">Complete Resilience System</div>
+                <div class="offer-description">Emergency Power + Water Purity + Year-Round Food</div>
+
+                <div class="timer-box">
+                    <div class="timer-label">Offer Expires In</div>
+                    <div class="timer-value">72 : 00 : 00</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>What's Included</h2>
+
+            <div class="bundle-grid">
+                <div class="bundle-item">
+                    <div class="bundle-icon">🔋</div>
+                    <div class="bundle-name">Pecron F5000</div>
+                    <div class="bundle-price">$2,499</div>
+                    <div class="bundle-new-price">$2,249</div>
+                </div>
+
+                <div class="bundle-item">
+                    <div class="bundle-icon">💧</div>
+                    <div class="bundle-name">Big Berkey</div>
+                    <div class="bundle-price">$349</div>
+                    <div class="bundle-new-price">$299</div>
+                </div>
+
+                <div class="bundle-item">
+                    <div class="bundle-icon">🌱</div>
+                    <div class="bundle-name">LETPOT System</div>
+                    <div class="bundle-price">$549</div>
+                    <div class="bundle-new-price">$449</div>
+                </div>
+
+                <div class="bundle-item">
+                    <div class="bundle-icon">📚</div>
+                    <div class="bundle-name">Complete Research</div>
+                    <div class="bundle-price">$0</div>
+                    <div class="bundle-new-price" style="color: #3B8E8E;">Free</div>
+                </div>
+            </div>
+
+            <div style="background-color: #F8F7F5; border-left: 4px solid #FF6B35; padding: 20px; margin: 24px 0; border-radius: 4px;">
+                <div style="font-size: 14px; color: #9A9490; margin-bottom: 8px;"><strong>Bundle Savings:</strong></div>
+                <div style="font-size: 24px; font-weight: 700; color: #FF6B35;">Save $400</div>
+                <div style="font-size: 14px; color: #9A9490; margin-top: 4px;">Regular total: $3,397 → Bundle price: $2,997</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Why Bundle?</h2>
+
+            <p>One integrated system means:</p>
+            <ul style="margin: 16px 0 24px 32px;">
+                <li><strong>Complete Coverage:</strong> Power, water, food—everything covered</li>
+                <li><strong>Coordinated Delivery:</strong> Single shipment, less hassle</li>
+                <li><strong>Member Pricing:</strong> $400 savings exclusive to newsletter members</li>
+                <li><strong>Priority Support:</strong> Direct access to technical team during installation</li>
+                <li><strong>Bonus Resources:</strong> Complete planning guide valued at $97 (free with bundle)</li>
+            </ul>
+
+            <div class="fine-print">
+                <p><strong>Bundle Details:</strong> Offer valid through [END DATE]. Limited to 100 bundle purchases this offering period. Applies to new customer orders only. Standard shipping included. 30-day satisfaction guarantee on all products. Installation support available via email/phone.</p>
+            </div>
+
+            <center>
+                <a href="https://suppliesarelimited.com/bundle-offer" class="cta-button">Claim Your Bundle</a>
+            </center>
+
+            <p style="margin-top: 32px; text-align: center; font-size: 14px; color: #9A9490;">Questions? <a href="https://suppliesarelimited.com/contact" style="color: #FF6B35; text-decoration: none;">Contact our team</a> for personalized guidance.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                Supplies Are Limited • Premium Resilience Products
+            </div>
+            <div class="footer-links">
+                <a href="https://suppliesarelimited.com">Website</a> |
+                <a href="https://suppliesarelimited.com/bundle-offer">Bundle Offer</a> |
+                <a href="https://suppliesarelimited.com/faq">FAQ</a>
+            </div>
+            <div class="footer-text" style="margin-top: 16px; font-size: 12px;">
+                You're receiving this email because you're a Supplies Are Limited member.<br>
+                <a href="[unsubscribe-link]" style="color: #9A9490; text-decoration: none;">Manage Email Preferences</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

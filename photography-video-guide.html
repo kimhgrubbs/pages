@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography & Video Direction Guide</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2D2D2D;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 56px 0 24px 0;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            max-width: 65ch;
+        }
+
+        .intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #5A5A5A;
+            margin-bottom: 40px;
+            max-width: 70ch;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: #E8E6E2;
+            margin: 64px 0 40px 0;
+        }
+
+        .guidance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .guidance-card {
+            border: 1px solid #E8E6E2;
+            padding: 32px;
+            border-radius: 4px;
+            background-color: #F8F7F5;
+        }
+
+        .guidance-card h3 {
+            margin-top: 0;
+        }
+
+        .do-list {
+            background-color: #F0FFF4;
+            border-left: 4px solid #4A7C59;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .dont-list {
+            background-color: #FFF5F5;
+            border-left: 4px solid #E07856;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .do-list h4, .dont-list h4 {
+            margin-top: 0;
+        }
+
+        .do-list ul, .dont-list ul {
+            margin-left: 24px;
+            padding: 0;
+        }
+
+        .do-list li, .dont-list li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .product-section {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 40px 32px;
+            margin: 40px 0;
+            border-radius: 4px;
+        }
+
+        .product-section h2 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .spec-box {
+            background-color: #FFFFFF;
+            border: 1px solid #E8E6E2;
+            padding: 24px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .spec-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9A9490;
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .comparison-item {
+            background-color: #FFFFFF;
+            border: 1px solid #E8E6E2;
+            padding: 24px;
+            border-radius: 4px;
+        }
+
+        .comparison-item h4 {
+            margin-top: 0;
+            color: #1A1A1A;
+        }
+
+        .color-reference {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 8px 8px 8px 0;
+        }
+
+        .orange-ref {
+            background-color: #FF6B35;
+            color: white;
+        }
+
+        .teal-ref {
+            background-color: #3B8E8E;
+            color: white;
+        }
+
+        .coral-ref {
+            background-color: #E07856;
+            color: white;
+        }
+
+        .checklist {
+            background-color: #F8F7F5;
+            border: 1px solid #E8E6E2;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0 8px 32px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4A7C59;
+            font-weight: 700;
+        }
+
+        .note {
+            background-color: #F8F7F5;
+            border-left: 4px solid #FF6B35;
+            padding: 20px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+
+        .note h4 {
+            margin-top: 0;
+        }
+
+        .note p {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Photography & Video Direction Guide</h1>
+        <p class="intro">Professional visual standards for product photography, lifestyle imagery, and video content. This guide ensures consistent, premium aesthetic across all marketing materials.</p>
+
+        <div class="section-divider"></div>
+
+        <h2>Overall Visual Direction</h2>
+
+        <p>Supplies Are Limited is premium preparation for high-income professionals. Our photography reflects:</p>
+
+        <ul style="margin: 24px 0 24px 32px; font-size: 16px; line-height: 1.7;">
+            <li><strong>Confidence & Control:</strong> Not emergency or crisis. Professional competence.</li>
+            <li><strong>Sophisticated Aesthetic:</strong> Luxury retail level quality. Mid-century modern influences.</li>
+            <li><strong>Research-Backed Credibility:</strong> Show products in real-world settings, not studio isolation.</li>
+            <li><strong>Aspirational Living:</strong> Modern homes, contemporary professionals, elevated lifestyle.</li>
+            <li><strong>Attention to Detail:</strong> Lighting, composition, styling all refined and deliberate.</li>
+        </ul>
+
+        <div class="section-divider"></div>
+
+        <h2>Pecron F5000 Photography Direction</h2>
+
+        <div class="product-section">
+            <h2 style="margin-top: 0; font-size: 32px;">Power Systems</h2>
+
+            <div class="guidance-grid">
+                <div class="guidance-card">
+                    <h3>Product Photography</h3>
+                    <p><strong>Background:</strong> Clean white sweep or minimal neutral gray (no clutter).</p>
+                    <p><strong>Lighting:</strong> Bright, directional key light. Fill light at 45-degree angle to minimize harsh shadows. Emphasize industrial design and metallic finishes.</p>
+                    <p><strong>Angle:</strong> 3/4 front view showing control panel and form factor. Show orange accent details.</p>
+                    <p><strong>Focus:</strong> Sharp, detailed product shots. Display LED indicators, ports, build quality.</p>
+                </div>
+
+                <div class="guidance-card">
+                    <h3>Lifestyle Photography</h3>
+                    <p><strong>Settings:</strong> Premium home environments—modern living rooms, tech-forward offices, home media centers, home office setups.</p>
+                    <p><strong>Context:</strong> Show Pecron powering realistic scenarios: charging laptop, running security system, emergency lighting setup (but not panicked scenes).</p>
+                    <p><strong>People:</strong> Confident professionals, calm demeanor. They're in control, not worried.</p>
+                    <p><strong>Styling:</strong> Contemporary interiors. Warm, professional tones.</p>
+                </div>
+            </div>
+
+            <div class="spec-box">
+                <div class="spec-label">Color Grading</div>
+                <div class="spec-value">Warm Orange Tones</div>
+                <p><strong>Color Temperature:</strong> 3500K–4500K (warm, professional lighting)<br><strong>Saturation:</strong> Enhance oranges naturally, not artificial<br><strong>Contrast:</strong> Crisp, high contrast emphasizing detail<br><strong>Highlights:</strong> Retain detail (avoid blown-out whites)<br><strong>Shadows:</strong> Maintain readability and product detail</p>
+            </div>
+
+            <div class="do-list">
+                <h4>✓ Do This</h4>
+                <ul>
+                    <li>Show product in real scenarios (office desk, home setup)</li>
+                    <li>Emphasize industrial design and premium build quality</li>
+                    <li>Use warm lighting creating professional atmosphere</li>
+                    <li>Show LED indicators and control panels in detail</li>
+                    <li>Include lifestyle shots of people confidently using product</li>
+                    <li>Show battery capacity indicators and charging ports</li>
+                </ul>
+            </div>
+
+            <div class="dont-list">
+                <h4>✗ Don't Do This</h4>
+                <ul>
+                    <li>Never show panicked or emergency scenarios</li>
+                    <li>Avoid dark, dramatic lighting (too alarmist)</li>
+                    <li>Don't overexpose orange (keep it sophisticated)</li>
+                    <li>Never show product in chaos or disaster setting</li>
+                    <li>Avoid overly bright or artificial lighting</li>
+                    <li>Don't hide technical details—they prove quality</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Big Berkey Photography Direction</h2>
+
+        <div class="product-section">
+            <h2 style="margin-top: 0; font-size: 32px;">Water Purity Systems</h2>
+
+            <div class="guidance-grid">
+                <div class="guidance-card">
+                    <h3>Product Photography</h3>
+                    <p><strong>Background:</strong> Clean white or very light backgrounds. Emphasis on clarity and purity.</p>
+                    <p><strong>Lighting:</strong> Bright, even lighting. Use backlighting to emphasize water clarity and glass construction. Show water droplets and filtration element detail.</p>
+                    <p><strong>Water Hero:</strong> Show water in the system. Emphasis on transparency and clarity.</p>
+                    <p><strong>Detail Shots:</strong> Close-ups of black filters, stainless steel construction, spigot mechanism.</p>
+                </div>
+
+                <div class="guidance-card">
+                    <h3>Lifestyle Photography</h3>
+                    <p><strong>Settings:</strong> Modern kitchens, dining areas, wellness spaces, yoga studios, contemporary home offices.</p>
+                    <p><strong>Context:</strong> Show family members hydrating, cooking with filtered water, wellness routines, children drinking from Berkey.</p>
+                    <p><strong>People:</strong> Healthy, satisfied, confident. Family moments emphasizing wellness.</p>
+                    <p><strong>Styling:</strong> Contemporary kitchens with natural light. Clean, minimal aesthetic.</p>
+                </div>
+            </div>
+
+            <div class="spec-box">
+                <div class="spec-label">Color Grading</div>
+                <div class="spec-value">Cool, Clean Tones</div>
+                <p><strong>Color Temperature:</strong> 5000K–5500K (daylight, clinical clarity)<br><strong>Saturation:</strong> Enhance teals naturally, emphasize clarity<br><strong>Brightness:</strong> Bright, airy mood. High key lighting.<br><strong>Contrast:</strong> Crisp emphasizing transparency<br><strong>Teal Accents:</strong> Subtle teal color grading enhancement</p>
+            </div>
+
+            <div class="do-list">
+                <h4>✓ Do This</h4>
+                <ul>
+                    <li>Emphasize water clarity and purity (clear water is hero)</li>
+                    <li>Show water droplets and filtration detail</li>
+                    <li>Use bright, natural daylight</li>
+                    <li>Include family wellness moments</li>
+                    <li>Show the glass and stainless steel construction</li>
+                    <li>Emphasize health and hydration benefits through context</li>
+                </ul>
+            </div>
+
+            <div class="dont-list">
+                <h4>✗ Don't Do This</h4>
+                <ul>
+                    <li>Avoid dark or murky water imagery</li>
+                    <li>Don't show contaminated water scenarios</li>
+                    <li>Avoid overly clinical/hospital-like aesthetic</li>
+                    <li>Never show product in cluttered kitchen</li>
+                    <li>Don't use cool, clinical color grading (keep it warm enough)</li>
+                    <li>Avoid sad or worried expressions (always positive)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>LETPOT Photography Direction</h2>
+
+        <div class="product-section">
+            <h2 style="margin-top: 0; font-size: 32px;">Indoor Gardening Systems</h2>
+
+            <div class="guidance-grid">
+                <div class="guidance-card">
+                    <h3>Product Photography</h3>
+                    <p><strong>Background:</strong> White or minimal backgrounds. Emphasis on lush green growth.</p>
+                    <p><strong>Lighting:</strong> Bright, natural-looking light showing LED grow lights in operation. Emphasize vibrant green plants and healthy growth.</p>
+                    <p><strong>Growth Hero:</strong> Show thriving herbs, salad greens, or vegetables. Lush, abundant plant life is the focus.</p>
+                    <p><strong>Detail Shots:</strong> Close-ups of LED lights, water level, seedlings sprouting, detailed leaf texture.</p>
+                </div>
+
+                <div class="guidance-card">
+                    <h3>Lifestyle Photography</h3>
+                    <p><strong>Settings:</strong> Modern kitchens, apartments, office spaces, dining areas, kitchen counters.</p>
+                    <p><strong>Context:</strong> Show fresh herbs being used in cooking, salad being harvested, fresh produce being prepared. Year-round abundance messaging.</p>
+                    <p><strong>People:</strong> Happy, satisfied, proud of their fresh food. Lifestyle-focused, not technical.</p>
+                    <p><strong>Styling:</strong> Contemporary interiors, natural light, food preparation moments.</p>
+                </div>
+            </div>
+
+            <div class="spec-box">
+                <div class="spec-label">Color Grading</div>
+                <div class="spec-value">Warm, Organic Tones</div>
+                <p><strong>Color Temperature:</strong> 3500K–4500K (warm, golden hour-like)<br><strong>Saturation:</strong> Enhance greens and coral accents naturally<br><strong>Mood:</strong> Sunlit, vital, organic<br><strong>Green Enhancement:</strong> Slightly boost green channel without unnatural look<br><strong>Warmth:</strong> Slight warm cast emphasizing life and abundance</p>
+            </div>
+
+            <div class="do-list">
+                <h4>✓ Do This</h4>
+                <ul>
+                    <li>Show lush, healthy plant growth (hero imagery)</li>
+                    <li>Emphasize vibrant greens and fresh food abundance</li>
+                    <li>Show LED lights in operation with healthy plants</li>
+                    <li>Include food preparation and harvest moments</li>
+                    <li>Show year-round growing (no seasonal limitation)</li>
+                    <li>Emphasize self-sufficiency and control over food supply</li>
+                </ul>
+            </div>
+
+            <div class="dont-list">
+                <h4>✗ Don't Do This</h4>
+                <ul>
+                    <li>Avoid wilted, diseased, or struggling plants</li>
+                    <li>Don't show empty systems or failed crops</li>
+                    <li>Avoid overly clinical grow-tent aesthetic</li>
+                    <li>Never show product in messy or cluttered space</li>
+                    <li>Don't oversaturate green to unnatural levels</li>
+                    <li>Avoid grim or desperate expressions (always positive)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Video Production Guidelines</h2>
+
+        <h3>Cinematography Style</h3>
+
+        <div class="guidance-grid">
+            <div class="guidance-card">
+                <h4>Camera Work</h4>
+                <p><strong>Movement:</strong> Smooth, deliberate camera movements. Slow push-ins, subtle pans. No shaky handheld.</p>
+                <p><strong>Framing:</strong> Rule of thirds. Asymmetrical composition. Generous headroom and clear sightlines.</p>
+                <p><strong>Shots:</strong> Mix of wide establishing, medium product shots, close-up detail work.</p>
+                <p><strong>Focus:</strong> Sharp, professional focus pulling. Shallow depth of field for product focus (20-30mm equivalent).</p>
+            </div>
+
+            <div class="guidance-card">
+                <h4>Lighting</h4>
+                <p><strong>Style:</strong> Three-point professional lighting with natural-looking results.</p>
+                <p><strong>Key Light:</strong> Directional, creating dimension. 45-degree angle.</p>
+                <p><strong>Fill Light:</strong> Subtle fill to maintain shadow detail.</p>
+                <p><strong>Backlight:</strong> Creates separation from background, adds dimension.</p>
+                <p><strong>Result:</strong> Professional, premium feel. Natural-looking, not overly lit.</p>
+            </div>
+
+            <div class="guidance-card">
+                <h4>Color Grading</h4>
+                <p><strong>LUT:</strong> Develop consistent color lookup table for all videos.</p>
+                <p><strong>Consistency:</strong> Match photography color grade for visual unity.</p>
+                <p><strong>Look:</strong> Slightly warm, slightly saturated. Luxury brand aesthetic.</p>
+                <p><strong>Highlights/Shadows:</strong> Crushed blacks, retained highlights. Professional cinema grade.</p>
+            </div>
+
+            <div class="guidance-card">
+                <h4>Editing & Pacing</h4>
+                <p><strong>Cuts:</strong> Clean, purposeful cuts on action or natural beats.</p>
+                <p><strong>Transitions:</strong> Minimal. Mostly cuts. Dissolves used sparingly.</p>
+                <p><strong>Pacing:</strong> 2–3 second product shots. Longer on lifestyle/narrative.</p>
+                <p><strong>Duration:</strong> 15–30 second format (optimized for social/ads).</p>
+            </div>
+        </div>
+
+        <h3>Text Overlay Standards</h3>
+
+        <div class="spec-box">
+            <p><strong>Font:</strong> Playfair Display (headlines), Inter (supporting text)<br><strong>Size:</strong> Large enough to read on mobile (16px+ minimum)<br><strong>Positioning:</strong> Lower third or asymmetrical placement<br><strong>Animation:</strong> Subtle fade-ins. No flashy text effects.<br><strong>Duration:</strong> 3–5 seconds on screen for readability<br><strong>Color:</strong> Brand orange (#FF6B35), white, or charcoal. Always maintain legibility.</p>
+        </div>
+
+        <h3>Audio Recommendations</h3>
+
+        <div class="guidance-grid">
+            <div class="guidance-card">
+                <h4>Sound Design</h4>
+                <p>Premium, subtle sound design. No generic stock audio. Focus on:</p>
+                <ul style="margin: 12px 0 0 20px;">
+                    <li>Natural product sounds (water pouring, buttons clicking, LED hum)</li>
+                    <li>Clean, minimal ambient sound</li>
+                    <li>Professional voiceover (warm, authoritative tone)</li>
+                </ul>
+            </div>
+
+            <div class="guidance-card">
+                <h4>Music</h4>
+                <p>Subtle, non-distracting background music:</p>
+                <ul style="margin: 12px 0 0 20px;">
+                    <li>Upbeat but sophisticated (not trendy)</li>
+                    <li>Instrumental preferred</li>
+                    <li>Premium production (not obviously stock)</li>
+                    <li>Matches pacing of footage</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Production Checklist</h2>
+
+        <div class="checklist">
+            <h3 style="margin-top: 0;">Before Shooting</h3>
+            <ul>
+                <li>Scout locations and finalize backgrounds (clean, uncluttered, appropriate for brand)</li>
+                <li>Test lighting setup and color temperature</li>
+                <li>Prepare styling and props (use premium, contemporary styling)</li>
+                <li>Create shot list organized by product</li>
+                <li>Confirm all camera/audio/lighting equipment is functional</li>
+                <li>Test color balance and white balance settings</li>
+                <li>Have backup power and memory cards</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 style="margin-top: 0;">During Shooting</h3>
+            <ul>
+                <li>Shoot in RAW format (for maximum color grading flexibility)</li>
+                <li>Maintain consistent lighting throughout shoot</li>
+                <li>Capture multiple angles and variations</li>
+                <li>Get both wide and close-up detail shots</li>
+                <li>Record ambient audio and natural product sounds</li>
+                <li>Capture lifestyle moments with real people</li>
+                <li>Take reference photos for color grading consistency</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3 style="margin-top: 0;">Post-Production</h3>
+            <ul>
+                <li>Apply consistent color grade to all footage</li>
+                <li>Remove any identifying brands/logos (except Supplies Are Limited)</li>
+                <li>Optimize for multiple platforms (square, vertical, horizontal ratios)</li>
+                <li>Add captions/subtitles for accessibility</li>
+                <li>Test on mobile devices for readability</li>
+                <li>Compress for web (target 50–100MB max for video files)</li>
+                <li>Export multiple formats (MP4, WebM, GIF variations)</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Technical Specifications</h2>
+
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h4>Photography</h4>
+                <p><strong>Resolution:</strong> Minimum 5000×5000px (300 DPI for print)<br><strong>Format:</strong> RAW (original), JPEG/WebP (export)<br><strong>File Size:</strong> Under 200KB for web<br><strong>Color Space:</strong> sRGB for web, Adobe RGB for print</p>
+            </div>
+
+            <div class="comparison-item">
+                <h4>Video</h4>
+                <p><strong>Resolution:</strong> 1080p minimum (1920×1080), 4K preferred<br><strong>Frame Rate:</strong> 24fps (cinema), 30fps (standard)<br><strong>Codec:</strong> H.264 (MP4), VP9 (WebM)<br><strong>File Size:</strong> Target 50–100MB for short-form video</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <h4>Accessibility Requirement</h4>
+            <p>All videos must include captions or subtitles. Alt text required for all images. Ensure 4.5:1 contrast ratio for any text overlays on video.</p>
+        </div>
+
+    </div>
+</body>
+</html>
