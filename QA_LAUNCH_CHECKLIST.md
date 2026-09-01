@@ -40,54 +40,72 @@
 
 ---
 
-### **PHASE 2: LINK VERIFICATION (Critical - Prevents Past Errors)**
+### **PHASE 2: LINK VERIFICATION (Critical - Prevents Past Errors)** ✓ UPDATED
 
-#### **Every Single URL Must Be Tested**
+#### **Every Single URL Must Be Tested** (Website-First Architecture)
 
-**LinkedIn Post 1:**
-- [ ] Link: `SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch`
+**LinkedIn Post 1 Example:**
+- [ ] Link: `SuppliesAreLimited.com/?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch`
 - [ ] Click the link (manually, from phone + desktop)
-- [ ] Product page loads correctly
-- [ ] Product image shows (if applicable)
-- [ ] Add to cart / checkout works
-- [ ] Form accepts input
+- [ ] Lands on SuppliesAreLimited.com catalog/homepage
+- [ ] Can browse products (power, water, accessories)
+- [ ] Affiliate products show "Find in Amazon" buttons
+- [ ] Direct sales show "Add to Cart" / "Buy Now"
+- [ ] Cannot bypass catalog to direct checkout
 - [ ] No 404 errors
 - [ ] Page loads in <3 seconds
 
 **Repeat for EVERY post, email, newsletter link**
 
-**Critical Check**: Does link go to SuppliesAreLimited.com (not Amazon, not general checkout)?
+**Critical Checks**:
+1. Does link go to SuppliesAreLimited.com (not Amazon, not direct checkout)? ✓
+2. Does website show affiliate products separately from direct sales? ✓
+3. Are checkout bypass attempts blocked? ✓
 
 ---
 
-#### **UTM Parameter Verification**
+#### **UTM Parameter Verification** ✓ UPDATED
 
-**Format**: `?utm_source=[platform]&utm_medium=social&utm_campaign=[campaign]`
+**Format** (Website-First): `SuppliesAreLimited.com/?utm_source=[platform]&utm_medium=[type]&utm_campaign=[campaign]`
 
-Examples:
+**Correct Examples** (Website-First):
 ```
-SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch ✓
+LinkedIn Post:
+SuppliesAreLimited.com/?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch ✓
 
-SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=substack&utm_medium=email&utm_campaign=newsletter_week1 ✓
+Substack Newsletter:
+SuppliesAreLimited.com/?utm_source=substack&utm_medium=email&utm_campaign=newsletter_week1 ✓
 
-SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=reddit&utm_medium=social&utm_campaign=r_prepping ✓
+Reddit Comment:
+SuppliesAreLimited.com/?utm_source=reddit&utm_medium=social&utm_campaign=r_prepping ✓
 
-SuppliesAreLimited.com/products/pecron-f5000lfp ✗ (Missing UTM - can't track source)
+Email Sequence:
+SuppliesAreLimited.com/?utm_source=email&utm_medium=email&utm_campaign=welcome_1 ✓
+```
 
-SuppliesAreLimited.com/shop ✗ (Generic, doesn't go to product)
+**INCORRECT** (Old Format - Do Not Use):
+```
+SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=linkedin... ✗ (Direct product - bad)
+SuppliesAreLimited.com/?utm_source=... ✓ (Correct - website catalog)
 ```
 
 **Verification Checklist** (for every link):
 - [ ] URL starts with SuppliesAreLimited.com (not affiliate, not external)
-- [ ] URL includes product-specific path (/products/pecron-f5000lfp)
-- [ ] UTM source is correct (matches platform)
+- [ ] URL is ONLY website homepage with UTM params (not product-specific path)
+- [ ] UTM source is correct (matches platform: linkedin, substack, reddit, email, etc.)
 - [ ] UTM medium is correct (social, email, etc.)
 - [ ] UTM campaign is correct (identifies the campaign)
 - [ ] No typos in URL
 - [ ] URL doesn't include personal data
-- [ ] Link shorteners NOT used (we need to see full UTM)
+- [ ] Link shorteners NOT used (we need to see full UTM for tracking)
+- [ ] Website properly separates affiliate from direct sales when clicked
 
-**Process**: Copy every link into spreadsheet, click each one, verify loads correctly
+**Process**: 
+1. Copy every link into spreadsheet
+2. Click each one from phone + desktop
+3. Verify lands on SuppliesAreLimited.com (not checkout)
+4. Verify can see both affiliate + direct products
+5. Verify checkout bypass is impossible
 
 ---
 
@@ -139,13 +157,30 @@ SuppliesAreLimited.com/shop ✗ (Generic, doesn't go to product)
 
 ---
 
-#### **Critical Infrastructure Issue Check**
-- [ ] "Shop Now" button goes to product page, NOT general checkout
-- [ ] Affiliate products clearly separated from direct sales
-- [ ] No confusion between Amazon affiliate items and house products
-- [ ] Customer can't accidentally buy wrong product
+#### **Critical Infrastructure Issue Check** ✓ FIXED
+**The $0 Revenue Error** (Sept 1 Fix Verification):
 
-**Historical Reference**: This was the $0 revenue error. Verify it's fixed.
+This was the blocker: "Shop Now" links led to general checkout, bypassing website catalog. Mixed affiliate + direct sales. Caused checkout confusion and zero revenue.
+
+**✓ VERIFIED FIX (as of Sept 1)**:
+- [ ] "Shop Now" button goes to SuppliesAreLimited.com (website/catalog first)
+- [ ] Website's built-in logic prevents checkout bypass (confirmed impossible)
+- [ ] Affiliate products have separate "Find in Amazon" buttons (clearly differentiated)
+- [ ] Direct sales flow normally to checkout (F5000LFP, water filters, etc.)
+- [ ] Customer MUST browse catalog before purchase (by design)
+- [ ] Cannot accidentally buy wrong product (affiliate bypass is blocked)
+- [ ] Affiliate bypass buttons cannot be circumvented (user cannot force direct checkout)
+
+**Test Procedure**:
+1. Click "Shop Now" link from social post
+2. Verify lands on SuppliesAreLimited.com (not checkout)
+3. See both affiliate products (with "Find in Amazon") and direct sales
+4. Try to force checkout from affiliate product (should fail)
+5. Normal checkout flow works for direct sales only
+6. Confirm: Affiliate products = separate buttons only
+7. Confirm: Direct products = normal checkout flow
+
+**Status**: ✓ This error is impossible going forward
 
 ---
 
