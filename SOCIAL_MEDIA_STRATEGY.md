@@ -2,24 +2,28 @@
 ## Maximum Exposure + Consistent Sales Focus
 **Goal**: Position as recognizable premium preparedness brand | Drive direct traffic to SuppliesAreLimited.com | Convert to consistent sales
 
+**Brand Tagline**: "Don't Panic. Pay Attention. Prepare."  
+**Target Market**: Premium/Soft Survivalism (research-driven, affluent, quality-focused)
+
 ---
 
 ## PART 1: STRATEGIC POSITIONING
 
 ### **Brand Position Statement**
-"Supplies Are Limited: Premium emergency preparedness equipment for discerning professionals and homeowners who demand reliability when seconds matter. Enterprise-grade quality. Luxury aesthetic. Direct-to-consumer pricing."
+"Supplies Are Limited: Premium emergency preparedness equipment for discerning professionals and homeowners who demand reliability when seconds matter. Enterprise-grade quality. Luxury aesthetic. Direct-to-consumer pricing. Resources for the prepared, not the paranoid."
 
-### **Target Audiences**
-1. **Primary**: Preparedness professionals (survival content creators, emergency planners, homesteaders)
-2. **Secondary**: Affluent homeowners (backup power seekers, grid reliability concerned)
-3. **Tertiary**: Off-grid lifestyle enthusiasts (solar, sustainable living)
+### **Target Audiences** (Premium/Soft Survivalist)
+1. **Primary**: High-income professionals (100K+) interested in energy independence and risk management
+2. **Secondary**: Affluent homeowners concerned about grid reliability and lifestyle autonomy
+3. **Tertiary**: Sustainability-focused executives and remote professionals seeking off-grid resilience
 
 ### **Brand Voice**
 - Sophisticated, not alarmist
-- Expert, not salesy
+- Research-backed, not theoretical
 - Luxury positioning, not budget
-- Action-oriented, not theoretical
-- Direct, honest, no fluff
+- Action-oriented, not panic-driven
+- Direct, honest, data-driven
+- Lean into "Pay Attention" as core value proposition
 
 ### **Competitive Advantage**
 - Premium products at competitive prices (direct-to-consumer)
@@ -43,7 +47,7 @@
 - Customer success stories
 - Industry trends
 
-**Link Strategy**: Every post ends with "Learn more: SuppliesAreLimited.com/[product]"
+**Link Strategy**: Every post ends with "Learn more: SuppliesAreLimited.com/?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch" (routes through catalog, prevents checkout bypass)
 
 **Expected Performance**:
 - 200-500 profile visitors/week
@@ -60,9 +64,16 @@
 **Posting Frequency**: Every Tuesday (consistent day builds habit)
 **Content Format**:
 - Opening essay (500-800 words) on preparedness topic
-- Product spotlight (how F5000 solves this)
+- **Dual Product Focus**: Power solutions (F5000LFP) + Water resources (purification, storage, filtration)
+- Product spotlight (how solutions solve specific problems)
 - Resource link
 - CTA to SuppliesAreLimited.com
+
+**Content Alternation**: 
+- Week 1: Grid reliability + energy independence (backup power focus)
+- Week 2: Water security + emergency preparation (water resources focus)
+- Week 3: Multi-system resilience (power + water integration)
+- Pattern repeats...
 
 **Expected Performance**:
 - 50-100 new subscribers/week
@@ -137,7 +148,7 @@
 - 20-50 website clicks/week
 - Visual brand building
 
-**Link Strategy**: Bio link to SuppliesAreLimited.com/products/pecron-f5000lfp
+**Link Strategy**: Bio link to SuppliesAreLimited.com (routes through website catalog, prevents checkout bypass)
 
 ---
 
@@ -215,7 +226,7 @@
 - 30-60 website clicks/week
 - Older demographic reach (40-65 age range)
 
-**Link Strategy**: Bio link to SuppliesAreLimited.com/products/pecron-f5000lfp
+**Link Strategy**: Bio link to SuppliesAreLimited.com (routes through website catalog, prevents checkout bypass)
 
 ---
 
@@ -347,31 +358,59 @@
 
 ---
 
+### **Pillar 5: Water Security (Essential Resources)**
+**Message**: Backup power means nothing without clean water. Water is the non-negotiable resource.
+**Content Examples**:
+- Water supply vulnerability & contamination risks
+- Purification methods (filters, UV, chemical, boiling)
+- Long-term storage strategies (capacity, rotation, climate)
+- Emergency filtration systems (portable, gravity-fed, professional)
+- Water independence vs. grid dependence
+- Cost of bottled water vs. professional purification
+
+**Posts**: 2x/month (alternates with power posts for content diversity)
+
+---
+
 ## PART 5: URL STRATEGY (Critical - Prevents Past Errors)
 
-### **Every Social Post Link Structure**
+### **Every Social Post Link Structure** (UPDATED: Website-First Architecture)
 
-**Format**: `SuppliesAreLimited.com/[SPECIFIC-PAGE]?utm_source=[platform]&utm_medium=social&utm_campaign=[campaign]`
+**Format**: `SuppliesAreLimited.com/?utm_source=[platform]&utm_medium=social&utm_campaign=[campaign]`
 
-**Examples**:
+**Why Website-First**:
+- All "Shop Now" links route to SuppliesAreLimited.com (the catalog/website)
+- Website's built-in logic prevents checkout bypass (IMPOSSIBLE to bypass per Sept 1 update)
+- Affiliate products clearly separated with "Find in Amazon" buttons
+- Direct sales flow normally to checkout
+- User MUST browse catalog before purchase (prevents accidental checkout)
+
+**Examples** (All Updated):
 
 ```
 LinkedIn Post about LiFePO4:
-SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch
+SuppliesAreLimited.com/?utm_source=linkedin&utm_medium=social&utm_campaign=sept_launch
 
 Substack Newsletter about grid reliability:
 SuppliesAreLimited.com/?utm_source=substack&utm_medium=email&utm_campaign=newsletter_week1
 
 Reddit comment about backup power:
-SuppliesAreLimited.com/products/pecron-f5000lfp?utm_source=reddit&utm_medium=social&utm_campaign=r_prepping
+SuppliesAreLimited.com/?utm_source=reddit&utm_medium=social&utm_campaign=r_prepping
+
+Email welcome sequence:
+SuppliesAreLimited.com/?utm_source=email&utm_medium=email&utm_campaign=welcome_sequence
+
+Instagram bio link:
+SuppliesAreLimited.com/?utm_source=instagram&utm_medium=social&utm_campaign=brand
 ```
 
 ### **Why This Matters**:
-- Tracks which channel drives sales
-- Prevents "shop now" from going to general checkout (old problem)
-- Direct to specific product, not homepage
-- Clear differentiation: SuppliesAreLimited.com products vs. Amazon affiliates
-- Accountability: Know which content converts
+- Prevents checkout bypass (the old problem that broke sales)
+- Separates affiliate from direct sales (user sees both, chooses knowingly)
+- Tracks which channel drives traffic accurately (UTM params)
+- Builds brand awareness through website visit (vs direct checkout)
+- Ensures high-intent buyers (they've seen the catalog)
+- Accountability: Know which content drives qualified traffic
 
 ---
 
