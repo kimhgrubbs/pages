@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplies Are Limited — Launch Deliverables Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary-orange: #FF6B35;
+            --color-primary-charcoal: #1A1A1A;
+            --color-accent-teal: #3B8E8E;
+            --color-accent-coral: #E07856;
+            --color-success: #4A7C59;
+            --color-warning: #C78B2F;
+            --color-neutral-ivory: #F8F7F5;
+            --color-neutral-light-gray: #E8E6E2;
+            --color-neutral-medium-gray: #9A9490;
+            --color-neutral-dark-gray: #2D2D2D;
+
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-neutral-ivory);
+            color: var(--color-neutral-dark-gray);
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--color-primary-charcoal);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .header .status {
+            font-size: 14px;
+            background-color: var(--color-primary-orange);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 4px;
+            margin-top: 16px;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--color-neutral-dark-gray);
+            border-bottom: 3px solid var(--color-primary-orange);
+            padding-bottom: 16px;
+        }
+
+        .deliverable {
+            background-color: white;
+            border: 2px solid var(--color-neutral-light-gray);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .deliverable:hover {
+            border-color: var(--color-primary-orange);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.1);
+        }
+
+        .deliverable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .deliverable-name {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-neutral-dark-gray);
+        }
+
+        .deliverable-type {
+            display: inline-block;
+            background-color: var(--color-neutral-light-gray);
+            color: var(--color-neutral-dark-gray);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .deliverable-type.design {
+            background-color: rgba(255, 107, 53, 0.15);
+            color: var(--color-primary-orange);
+        }
+
+        .deliverable-type.content {
+            background-color: rgba(59, 142, 142, 0.15);
+            color: var(--color-accent-teal);
+        }
+
+        .deliverable-type.automation {
+            background-color: rgba(74, 124, 89, 0.15);
+            color: var(--color-success);
+        }
+
+        .deliverable-description {
+            color: var(--color-neutral-medium-gray);
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .deliverable-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .deliverable-features li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--color-neutral-dark-gray);
+            font-size: 15px;
+        }
+
+        .deliverable-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary-orange);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .deliverable-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-neutral-light-gray);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #E85A24;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--color-neutral-dark-gray);
+            border: 2px solid var(--color-neutral-light-gray);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-primary-orange);
+            color: var(--color-primary-orange);
+        }
+
+        .btn-approve {
+            background-color: var(--color-success);
+            color: white;
+        }
+
+        .btn-approve:hover {
+            background-color: #3a6b4a;
+        }
+
+        .btn-disapprove {
+            background-color: #D97757;
+            color: white;
+        }
+
+        .btn-disapprove:hover {
+            background-color: #C86646;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-badge.ready {
+            background-color: rgba(74, 124, 89, 0.2);
+            color: var(--color-success);
+        }
+
+        .status-badge.pending {
+            background-color: rgba(199, 139, 47, 0.2);
+            color: var(--color-warning);
+        }
+
+        .status-badge.approved {
+            background-color: rgba(74, 124, 89, 0.25);
+            color: #2d5a3d;
+        }
+
+        .summary {
+            background-color: white;
+            border: 2px solid var(--color-primary-orange);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 60px;
+        }
+
+        .summary h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-primary-orange);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .summary-stat {
+            text-align: center;
+        }
+
+        .summary-stat-number {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-primary-orange);
+            margin-bottom: 8px;
+        }
+
+        .summary-stat-label {
+            font-size: 14px;
+            color: var(--color-neutral-medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--color-neutral-ivory);
+            margin: 50px auto;
+            padding: 40px;
+            border: 1px solid var(--color-neutral-light-gray);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 8px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--color-neutral-dark-gray);
+            border-bottom: 2px solid var(--color-primary-orange);
+            padding-bottom: 16px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .footer {
+            background-color: var(--color-primary-charcoal);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .footer .launch-date {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 24px;
+            color: var(--color-primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .container {
+                padding: 0 24px 40px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .deliverable {
+                padding: 24px;
+            }
+
+            .deliverable-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Supplies Are Limited</h1>
+        <p>Launch Deliverables Review Dashboard</p>
+        <p style="font-size: 14px; margin-top: 8px;">September 1, 2026 | 20 hours to launch</p>
+        <div class="status">READY FOR APPROVAL</div>
+    </div>
+
+    <div class="container">
+        <div class="summary">
+            <h2>Launch Status Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-stat">
+                    <div class="summary-stat-number">8</div>
+                    <div class="summary-stat-label">Design Assets</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-stat-number">15</div>
+                    <div class="summary-stat-label">Marketing Documents</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-stat-number">6</div>
+                    <div class="summary-stat-label">Email Templates</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-stat-number">100%</div>
+                    <div class="summary-stat-label">Ready to Deploy</div>
+                </div>
+            </div>
+            <p style="color: var(--color-neutral-medium-gray); line-height: 1.8;">
+                All visual design, brand identity, marketing collateral, automation systems, and campaign documentation has been completed and is ready for your review. Click on each deliverable below to preview, view details, or approve for launch.
+            </p>
+        </div>
+
+        <!-- VISUAL DESIGN SECTION -->
+        <div class="section">
+            <div class="section-title">Visual Design & Brand Identity</div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Brand Guidelines System</div>
+                    <span class="deliverable-type design">Design</span>
+                </div>
+                <p class="deliverable-description">Complete brand identity system with premium color palette, typography rules, component library, and design guidelines for consistent application across all platforms.</p>
+                <ul class="deliverable-features">
+                    <li>Color palette with hex codes (Orange/Black primary, Teal/Coral/Blue secondary)</li>
+                    <li>Typography system (Playfair Display + Inter font stack)</li>
+                    <li>Component library (buttons, cards, forms, navigation)</li>
+                    <li>Design grid system (8px/16px/24px base)</li>
+                    <li>Usage guidelines and best practices</li>
+                    <li>Dark mode support</li>
+                    <li>Print-ready specifications</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('brandGuidelinesPreview')">Preview Full Guidelines</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Brand Guidelines', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Brand Guidelines', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Email Template System</div>
+                    <span class="deliverable-type design">Design</span>
+                </div>
+                <p class="deliverable-description">5 premium HTML email templates ready for Klavioy integration. Welcome sequence (Email 1-5) with luxury aesthetic, brand colors, and responsive design.</p>
+                <ul class="deliverable-features">
+                    <li>Email 1: Welcome to Supplies Are Limited</li>
+                    <li>Email 2: Pecron F5000 Deep Dive</li>
+                    <li>Email 3: Big Berkey Water Security</li>
+                    <li>Email 4: LETPOT Food Independence</li>
+                    <li>Email 5: Testimonial & Social Proof</li>
+                    <li>Fully responsive for mobile/desktop</li>
+                    <li>Brand-consistent design with orange CTAs</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('emailTemplatePreview')">Preview Email 1</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Email Templates', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Email Templates', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MARKETING CONTENT SECTION -->
+        <div class="section">
+            <div class="section-title">Marketing & Campaign Content</div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Instagram/Facebook 12-Week Calendar</div>
+                    <span class="deliverable-type content">Content</span>
+                </div>
+                <p class="deliverable-description">Complete 12-week social media strategy with all 36 posts pre-written. Ready to upload to Buffer or Meta Business Suite for automated posting.</p>
+                <ul class="deliverable-features">
+                    <li>36 posts across 12 weeks (3x/week: Mon/Wed/Fri 9am ET)</li>
+                    <li>Complete captions for every post</li>
+                    <li>Optimized hashtag rotation strategy</li>
+                    <li>Content type breakdown (Reels, Carousels, Testimonials)</li>
+                    <li>UTM parameter tracking for all links</li>
+                    <li>Post-specific engagement strategies</li>
+                    <li>Expected results and performance targets</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('instagramPreview')">View Sample Posts</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Instagram/Facebook Calendar', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Instagram/Facebook Calendar', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">TikTok 12-Week Content Calendar</div>
+                    <span class="deliverable-type content">Content</span>
+                </div>
+                <p class="deliverable-description">84 video concepts for 12 weeks of TikTok deployment (3x/week). Complete with hooks, CTAs, trending audio recommendations, and detailed first-month scripts.</p>
+                <ul class="deliverable-features">
+                    <li>84 video concepts (12 weeks × 3x/week)</li>
+                    <li>First 4 weeks detailed scripts with hooks</li>
+                    <li>Content rotation by theme (Product Demo, Education, POV, Testimonial)</li>
+                    <li>Trending audio integration strategy</li>
+                    <li>Posting schedule (Mon/Wed/Fri 5pm ET)</li>
+                    <li>Expected metrics (24,000-36,000 views Month 1)</li>
+                    <li>Hashtag strategy with rotation</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('tiktokPreview')">View TikTok Strategy</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('TikTok Calendar', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('TikTok Calendar', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Threads 8-Week Launch Strategy</div>
+                    <span class="deliverable-type content">Content</span>
+                </div>
+                <p class="deliverable-description">16 pre-written Threads posts (2x/week) with thought leadership essays and news updates. Scheduled for automated posting via Meta Business Suite.</p>
+                <ul class="deliverable-features">
+                    <li>16 posts for 8 weeks (2x/week: Tue/Thu 10am ET)</li>
+                    <li>Thought leadership essay format</li>
+                    <li>Engagement playbook with 8 reply templates</li>
+                    <li>Community management strategies</li>
+                    <li>Complete caption copy ready to paste</li>
+                    <li>Three-pillar content framework (Grid, Water, Food)</li>
+                    <li>Negative comment handling procedures</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('threadsPreview')">View Threads Strategy</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Threads Strategy', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Threads Strategy', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">LinkedIn 12-Post Launch Series</div>
+                    <span class="deliverable-type content">Content</span>
+                </div>
+                <p class="deliverable-description">12 LinkedIn posts targeting premium/soft survivalism audience. Complete with copy, hashtags, and posting schedule (3x/week).</p>
+                <ul class="deliverable-features">
+                    <li>12 complete LinkedIn posts</li>
+                    <li>3x/week posting schedule</li>
+                    <li>Professional brand voice</li>
+                    <li>UTM parameter tracking</li>
+                    <li>Hashtag strategy for B2C professional audience</li>
+                    <li>Call-to-action optimization</li>
+                    <li>Expected engagement targets</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-approve" onclick="approveDeliverable('LinkedIn Posts', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('LinkedIn Posts', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Substack Newsletter Strategy</div>
+                    <span class="deliverable-type content">Content</span>
+                </div>
+                <p class="deliverable-description">Complete Substack strategy with 4 pre-written newsletters for launch. Educational content positioning with three-pillar resilience framework.</p>
+                <ul class="deliverable-features">
+                    <li>4 newsletters pre-written and ready to publish</li>
+                    <li>Weekly publication schedule</li>
+                    <li>Deep-dive educational content format</li>
+                    <li>Three-pillar resilience narrative (Power, Water, Food)</li>
+                    <li>Email list growth strategy</li>
+                    <li>Call-to-action optimization</li>
+                    <li>Expected subscriber growth targets</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-approve" onclick="approveDeliverable('Substack Strategy', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Substack Strategy', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUTOMATION & SYSTEMS SECTION -->
+        <div class="section">
+            <div class="section-title">Automation & Systems Setup</div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Instagram/Facebook Automation System</div>
+                    <span class="deliverable-type automation">Automation</span>
+                </div>
+                <p class="deliverable-description">Complete automation setup for Instagram/Facebook with Buffer integration, daily monitoring system, and weekly analytics framework.</p>
+                <ul class="deliverable-features">
+                    <li>Platform setup guide (Buffer or Meta Business Suite)</li>
+                    <li>Content upload workflow documentation</li>
+                    <li>Daily engagement monitoring system (5 min/day)</li>
+                    <li>Weekly analytics review process (20 min/week)</li>
+                    <li>Hashtag performance tracking</li>
+                    <li>Comment response templates (20+ variations)</li>
+                    <li>Crisis management procedures</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('igFacebookAutomation')">View Setup Guide</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Instagram/Facebook Automation', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Instagram/Facebook Automation', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">TikTok Automation Implementation</div>
+                    <span class="deliverable-type automation">Automation</span>
+                </div>
+                <p class="deliverable-description">Complete TikTok automation strategy with Buffer setup, performance tracking, and weekly optimization process. 100% automated posting, 30 min daily oversight.</p>
+                <ul class="deliverable-features">
+                    <li>Buffer account setup and configuration</li>
+                    <li>Trending audio integration workflow</li>
+                    <li>Performance metrics dashboard</li>
+                    <li>Daily metrics logging system</li>
+                    <li>Weekly trend analysis process</li>
+                    <li>Monthly performance reporting</li>
+                    <li>Contingency & troubleshooting plans</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('tiktokAutomation')">View Automation Setup</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('TikTok Automation', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('TikTok Automation', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+
+            <div class="deliverable">
+                <div class="deliverable-header">
+                    <div class="deliverable-name">Daily Performance Tracking System</div>
+                    <span class="deliverable-type automation">Automation</span>
+                </div>
+                <p class="deliverable-description">Automated Google Sheets tracking with Apps Script. Daily data collection from Google Analytics, Shopify, and Klavioy. Automatic daily and weekly email reports.</p>
+                <ul class="deliverable-features">
+                    <li>Google Sheets template with formulas</li>
+                    <li>Google Apps Script automation</li>
+                    <li>Daily data collection (6:30pm CDT Shopify, 7pm Klavioy)</li>
+                    <li>Automatic AOV and conversion rate calculation</li>
+                    <li>Daily email reporting (7:30pm CDT)</li>
+                    <li>Weekly performance summary emails</li>
+                    <li>Anomaly detection and alerts</li>
+                </ul>
+                <div class="deliverable-actions">
+                    <button class="btn btn-primary" onclick="openModal('trackingAutomation')">View Tracking Setup</button>
+                    <button class="btn btn-approve" onclick="approveDeliverable('Tracking Automation', 'approved')">✓ Approve</button>
+                    <button class="btn btn-disapprove" onclick="approveDeliverable('Tracking Automation', 'needs revision')">✗ Needs Revision</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPROVAL SUMMARY SECTION -->
+        <div class="section">
+            <div class="section-title">Your Approvals</div>
+            <div style="background-color: white; border: 2px solid var(--color-neutral-light-gray); border-radius: 8px; padding: 32px;">
+                <div id="approvalsContainer" style="color: var(--color-neutral-medium-gray); text-align: center; padding: 40px 20px;">
+                    <p style="font-size: 18px; margin-bottom: 12px;">No approvals logged yet</p>
+                    <p style="font-size: 14px;">Click the approve/revision buttons above to log your feedback</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div id="brandGuidelinesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brandGuidelinesModal')">&times;</span>
+            <div class="modal-header">Brand Guidelines System</div>
+            <p>The complete brand guidelines document includes:</p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
+                <li><strong>Color Palette:</strong> Orange #FF6B35, Black #1A1A1A, Teal #3B8E8E, Coral #E07856, with neutrals and accent colors with full hex/RGB codes</li>
+                <li><strong>Typography:</strong> Playfair Display (display), Inter (body), IBM Plex Mono (code) with complete font scale</li>
+                <li><strong>Components:</strong> Buttons, cards, forms, navigation, hero sections, all with hover states and disabled states</li>
+                <li><strong>Grid System:</strong> 8px base with 16px and 24px options for spacing consistency</li>
+                <li><strong>Dark Mode:</strong> Full support with CSS variables for theme switching</li>
+                <li><strong>Usage Guide:</strong> When to use each color, typography rules, component best practices</li>
+            </ul>
+            <p><a href="brand-guidelines.html" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ Open Full Guidelines in New Window</a></p>
+        </div>
+    </div>
+
+    <div id="emailTemplateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('emailTemplateModal')">&times;</span>
+            <div class="modal-header">Email Template System</div>
+            <p>5 premium HTML email templates ready for Klavioy integration:</p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
+                <li><strong>Email 1 (Welcome):</strong> Introduces Supplies Are Limited with three-pillar positioning</li>
+                <li><strong>Email 2 (Pecron):</strong> Deep dive into F5000LFP backup power system</li>
+                <li><strong>Email 3 (Berkey):</strong> Water security and filtration focus</li>
+                <li><strong>Email 4 (LETPOT):</strong> Food independence through hydroponics</li>
+                <li><strong>Email 5 (Testimonial):</strong> Social proof and customer success stories</li>
+            </ul>
+            <p style="margin-top: 20px;">All templates feature:</p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Responsive design (mobile and desktop)</li>
+                <li>Brand colors (orange buttons, charcoal headers)</li>
+                <li>Professional typography</li>
+                <li>Clear call-to-action buttons</li>
+                <li>Premium aesthetic matching brand guidelines</li>
+            </ul>
+            <p><a href="email-template-01-welcome.html" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ Preview Email 1 (Welcome)</a></p>
+        </div>
+    </div>
+
+    <div id="instagramModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('instagramModal')">&times;</span>
+            <div class="modal-header">Instagram/Facebook 12-Week Calendar</div>
+            <p>36 complete social media posts organized by theme and content type:</p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
+                <li><strong>Week 1-4:</strong> Power & Protection (Pecron focus)</li>
+                <li><strong>Week 5-8:</strong> Water Security & Independence (Berkey focus)</li>
+                <li><strong>Week 9-12:</strong> Food & Community (LETPOT + lifestyle)</li>
+            </ul>
+            <p style="margin-top: 20px;">Content rotation pattern (repeats every 2 weeks):</p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li><strong>Monday 9am ET:</strong> Product Reel (15-30 sec video demo)</li>
+                <li><strong>Wednesday 9am ET:</strong> Carousel Post (5-7 image educational content)</li>
+                <li><strong>Friday 9am ET:</strong> Testimonial/Lifestyle (customer story or product in use)</li>
+            </ul>
+            <p><a href="README.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete Calendar Document</a></p>
+        </div>
+    </div>
+
+    <div id="tiktokModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tiktokModal')">&times;</span>
+            <div class="modal-header">TikTok 12-Week Content Strategy</div>
+            <p>84 video concepts for maximum reach and engagement:</p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
+                <li><strong>Month 1:</strong> Product demos, trend formats, testimonials (24,000-36,000 expected views)</li>
+                <li><strong>Month 2:</strong> Education, problem/solution, behind-the-scenes</li>
+                <li><strong>Month 3:</strong> Success stories, case studies, community engagement</li>
+            </ul>
+            <p style="margin-top: 20px;">First 4 weeks include detailed scripts:</p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Week 1: F5000 Demo, Unprepared POV, Testimonial</li>
+                <li>Week 2: F5000 vs Generators, Unprepared Trend, Unboxing</li>
+                <li>Week 3: Water Problem, Berkey Demo, Testimonial</li>
+                <li>Week 4: LETPOT Intro, Supply Chain POV, Time-Lapse</li>
+            </ul>
+            <p><a href="TIKTOK_LAUNCH_REPORT.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete TikTok Strategy</a></p>
+        </div>
+    </div>
+
+    <div id="threadsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('threadsModal')">&times;</span>
+            <div class="modal-header">Threads 8-Week Launch Strategy</div>
+            <p>16 thought-leadership posts + complete engagement playbook:</p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 2;">
+                <li><strong>Weeks 1-2:</strong> Grid reliability crisis (3 posts)</li>
+                <li><strong>Weeks 3-4:</strong> Water independence (4 posts)</li>
+                <li><strong>Weeks 5-6:</strong> Food security (3 posts)</li>
+                <li><strong>Weeks 7-8:</strong> Three-pillar framework + CTA (3 posts)</li>
+            </ul>
+            <p style="margin-top: 20px;">Complete engagement toolkit includes:</p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>8 reply templates for common questions</li>
+                <li>Negative comment handling strategies</li>
+                <li>Community building approach</li>
+                <li>CTA optimization tactics</li>
+            </ul>
+            <p><a href="THREADS_AUTOMATION_STRATEGY.md" target="_blank" style="color: var(--color-primary-orange); font-weight: 600; text-decoration: none;">→ View Complete Threads Strategy</a></p>
+        </div>
+    </div>
+
+    <div id="igFacebookAutomationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('igFacebookAutomationModal')">&times;</span>
+            <div class="modal-header">Instagram/Facebook Automation System</div>
+            <p><strong>Setup Process (30 minutes):</strong></p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
+                <li>Create Buffer account ($15/month) or use Meta Business Suite (free)</li>
+                <li>Connect Instagram and Facebook accounts</li>
+                <li>Set posting schedule and timezone</li>
+                <li>Upload content and captions</li>
+                <li>Verify link tracking and UTM parameters</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Daily Operations (5 min/day):</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Verify posts published correctly</li>
+                <li>Respond to comments and DMs</li>
+                <li>Log engagement metrics</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Weekly Review (20 min/week):</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Analyze which posts performed best</li>
+                <li>Check hashtag performance</li>
+                <li>Document learnings for next week</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tiktokAutomationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tiktokAutomationModal')">&times;</span>
+            <div class="modal-header">TikTok Automation Implementation</div>
+            <p><strong>Phase 1: Setup (5 hours)</strong></p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
+                <li>Convert TikTok account to Business Account</li>
+                <li>Set up Buffer.com integration</li>
+                <li>Configure Google Analytics tracking</li>
+                <li>Create performance spreadsheet</li>
+                <li>Prepare video production</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Phase 2: Content Upload (2 hours)</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Upload all 84 videos to Buffer</li>
+                <li>Set posting schedule (Mon/Wed/Fri 5pm ET)</li>
+                <li>Add captions and hashtags</li>
+                <li>Verify link in bio</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Phase 3: Daily Operations (30 min/day)</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Verify post published</li>
+                <li>Respond to comments</li>
+                <li>Log metrics</li>
+                <li>Engage with community</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="trackingAutomationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('trackingAutomationModal')">&times;</span>
+            <div class="modal-header">Daily Performance Tracking System</div>
+            <p><strong>Automated Data Collection:</strong></p>
+            <ul style="margin: 20px 0 20px 40px; line-height: 1.8;">
+                <li>6:30pm CDT: Shopify order and revenue data</li>
+                <li>7:00pm CDT: Klavioy email metrics (opens, clicks)</li>
+                <li>7:15pm CDT: Automatic calculations (AOV, conversion rate)</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Daily Report (emailed at 7:30pm CDT):</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Daily visitors and traffic sources</li>
+                <li>Daily orders and revenue by channel</li>
+                <li>Email signups and open rates</li>
+                <li>Anomaly alerts (if revenue drops 30%+)</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Weekly Report (every Sunday at 10am):</strong></p>
+            <ul style="margin: 12px 0 20px 40px; line-height: 1.8;">
+                <li>Channel performance ranking (ROI, conversion rate)</li>
+                <li>Top performing content</li>
+                <li>Week-over-week comparison</li>
+                <li>Recommendations for next week</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 18px; font-weight: 600;">✓ LAUNCH READY</p>
+        <p>All deliverables are complete and ready for your approval.</p>
+        <p>Once you approve these items, we can proceed with immediate deployment.</p>
+        <div class="launch-date">Wednesday, September 2, 2026 @ 8:00 AM CDT</div>
+    </div>
+
+    <script>
+        function openModal(modalName) {
+            const modal = document.getElementById(modalName + 'Modal');
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal(modalName) {
+            const modal = document.getElementById(modalName);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        let approvals = {};
+
+        function approveDeliverable(name, status) {
+            approvals[name] = status;
+            updateApprovalsDisplay();
+
+            if (status === 'approved') {
+                alert(`✓ ${name} marked as APPROVED for launch`);
+            } else if (status === 'needs revision') {
+                alert(`⚠ ${name} marked as NEEDS REVISION - please provide feedback`);
+            }
+        }
+
+        function updateApprovalsDisplay() {
+            const container = document.getElementById('approvalsContainer');
+            const approved = Object.keys(approvals).filter(k => approvals[k] === 'approved');
+            const needsRevision = Object.keys(approvals).filter(k => approvals[k] === 'needs revision');
+
+            if (approved.length === 0 && needsRevision.length === 0) {
+                container.innerHTML = '<p style="font-size: 18px; margin-bottom: 12px;">No approvals logged yet</p><p style="font-size: 14px;">Click the approve/revision buttons above to log your feedback</p>';
+                return;
+            }
+
+            let html = '';
+
+            if (approved.length > 0) {
+                html += '<div style="margin-bottom: 24px;"><p style="font-weight: 600; color: var(--color-success); margin-bottom: 12px;">✓ APPROVED (' + approved.length + ')</p>';
+                html += '<ul style="list-style: none; line-height: 2;">';
+                approved.forEach(item => {
+                    html += '<li style="color: var(--color-neutral-dark-gray); padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-success);">✓</span>' + item + '</li>';
+                });
+                html += '</ul></div>';
+            }
+
+            if (needsRevision.length > 0) {
+                html += '<div style="margin-bottom: 24px;"><p style="font-weight: 600; color: var(--color-warning); margin-bottom: 12px;">⚠ NEEDS REVISION (' + needsRevision.length + ')</p>';
+                html += '<ul style="list-style: none; line-height: 2;">';
+                needsRevision.forEach(item => {
+                    html += '<li style="color: var(--color-neutral-dark-gray); padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-warning);">⚠</span>' + item + '</li>';
+                });
+                html += '</ul></div>';
+            }
+
+            if (approved.length + needsRevision.length > 0) {
+                html += '<div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--color-neutral-light-gray);"><p style="font-size: 14px; color: var(--color-neutral-medium-gray);">Status: ' + approved.length + ' approved | ' + needsRevision.length + ' needing revision</p></div>';
+            }
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
