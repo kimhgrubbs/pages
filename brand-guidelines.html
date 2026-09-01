@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplies Are Limited Brand Guidelines</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <style>
+        :root {
+            --color-primary-orange: #FF6B35;
+            --color-primary-charcoal: #1A1A1A;
+            --color-accent-teal: #3B8E8E;
+            --color-accent-coral: #E07856;
+            --color-success: #4A7C59;
+            --color-warning: #C78B2F;
+            --color-neutral-ivory: #F8F7F5;
+            --color-neutral-light-gray: #E8E6E2;
+            --color-neutral-medium-gray: #9A9490;
+            --color-neutral-dark-gray: #2D2D2D;
+
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            --text-color: #2D2D2D;
+            --text-light: #5A5A5A;
+            --bg-color: #FFFFFF;
+            --bg-secondary: #F8F7F5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --text-color: #E8E6E2;
+                --text-light: #A8A8A8;
+                --bg-color: #1A1A1A;
+                --bg-secondary: #252423;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --text-color: #E8E6E2;
+            --text-light: #A8A8A8;
+            --bg-color: #1A1A1A;
+            --bg-secondary: #252423;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        body {
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-color);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            margin-top: 64px;
+            color: var(--text-color);
+            text-wrap: balance;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            color: var(--text-color);
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            margin-top: 24px;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: var(--text-color);
+            max-width: 65ch;
+        }
+
+        .intro {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 70ch;
+        }
+
+        .tagline {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--color-primary-orange);
+            margin-bottom: 40px;
+            max-width: 60ch;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: var(--color-neutral-light-gray);
+            margin: 80px 0 40px 0;
+        }
+
+        /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .color-swatch {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .color-preview {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 12px;
+        }
+
+        .color-info {
+            padding: 20px;
+            background-color: var(--bg-secondary);
+        }
+
+        .color-name {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .color-code {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .color-description {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Palette Sections */
+        .palette-section {
+            margin-bottom: 56px;
+        }
+
+        .palette-section h3 {
+            margin-top: 0;
+        }
+
+        /* Component Grid */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .component-card {
+            border: 1px solid var(--color-neutral-light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+
+        .component-preview {
+            padding: 32px;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .component-info {
+            padding: 24px;
+            border-top: 1px solid var(--color-neutral-light-gray);
+        }
+
+        .component-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .component-description {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #E85A24;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            background-color: #D04A14;
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-secondary);
+            color: var(--text-color);
+            border: 2px solid var(--color-primary-charcoal);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-neutral-light-gray);
+        }
+
+        .btn-teal {
+            background-color: var(--color-accent-teal);
+            color: white;
+        }
+
+        .btn-teal:hover {
+            background-color: #2F6F6F;
+        }
+
+        .btn-coral {
+            background-color: var(--color-accent-coral);
+            color: white;
+        }
+
+        .btn-coral:hover {
+            background-color: #D06745;
+        }
+
+        /* Type Scale */
+        .type-scale {
+            font-family: var(--font-body);
+            margin-bottom: 24px;
+        }
+
+        .type-scale-item {
+            margin-bottom: 32px;
+        }
+
+        .type-size {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .type-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-light);
+            min-width: 100px;
+        }
+
+        .type-example {
+            color: var(--text-color);
+        }
+
+        .h1-example {
+            font-size: 56px;
+            font-weight: 700;
+            font-family: var(--font-display);
+            line-height: 1.2;
+        }
+
+        .h2-example {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            line-height: 1.2;
+        }
+
+        .h3-example {
+            font-size: 28px;
+            font-weight: 600;
+            font-family: var(--font-display);
+        }
+
+        .h4-example {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: var(--font-display);
+        }
+
+        .body-example {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .caption-example {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Spacing Reference */
+        .spacing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .spacing-item {
+            border: 1px solid var(--color-neutral-light-gray);
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .spacing-box {
+            background-color: var(--color-primary-orange);
+            opacity: 0.2;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .spacing-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        /* Grid Reference */
+        .grid-reference {
+            background-image: linear-gradient(90deg, var(--color-primary-orange) 0.5px, transparent 0.5px);
+            background-size: 8px 100%;
+            padding: 16px;
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            margin-bottom: 32px;
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Photography Guidelines */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .photo-directive {
+            border: 2px dashed var(--color-neutral-light-gray);
+            padding: 32px 24px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .photo-directive h4 {
+            margin-top: 0;
+        }
+
+        /* Word marks */
+        .wordmark-example {
+            display: inline-block;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+        .wordmark-text {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-color);
+            letter-spacing: -0.02em;
+        }
+
+        /* Code blocks */
+        code {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            background-color: var(--bg-secondary);
+            padding: 4px 8px;
+            border-radius: 3px;
+            color: var(--text-color);
+        }
+
+        pre {
+            background-color: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+        }
+
+        th {
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid var(--color-neutral-light-gray);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--color-neutral-light-gray);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: var(--text-light);
+        }
+
+        .mt-large {
+            margin-top: 64px;
+        }
+
+        .mb-large {
+            margin-bottom: 64px;
+        }
+
+        .highlight {
+            background-color: var(--color-primary-orange);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .note {
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--color-primary-orange);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 32px;
+        }
+
+        .note h4 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        /* Breakpoints note */
+        .breakpoint-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .breakpoint-item {
+            background-color: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .breakpoint-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .breakpoint-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section>
+            <h1>Supplies Are Limited</h1>
+            <p class="intro">Comprehensive brand guidelines for premium resilience products. This system ensures consistency across all customer touchpoints while maintaining the sophisticated, research-backed positioning that defines our brand.</p>
+            <p class="tagline">"Don't Panic. Pay Attention. Prepare."</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Brand Overview -->
+        <section>
+            <h2>Brand Overview</h2>
+            <p>Supplies Are Limited serves high-income professionals (100K+) in the premium resilience space. We are not survivalism—we are sophisticated preparation. Our positioning balances research-backed credibility with aspirational lifestyle design.</p>
+
+            <p><strong>Three Product Tiers:</strong></p>
+            <ul style="margin-bottom: 24px;">
+                <li><strong>Pecron F5000</strong> (Emergency Power) — Orange & Black aesthetic. Bold, energetic, commanding.</li>
+                <li><strong>Big Berkey</strong> (Water Purification) — Teal aesthetic. Calm, reliable, trustworthy.</li>
+                <li><strong>LETPOT</strong> (Indoor Garden) — Coral aesthetic. Warm, organic, abundant growth.</li>
+            </ul>
+
+            <p><strong>Design Principles:</strong></p>
+            <ul style="margin-bottom: 24px;">
+                <li>Premium without ostentation</li>
+                <li>Mid-century modern influences (clean lines, geometric precision)</li>
+                <li>Generous whitespace emphasizing luxury and clarity</li>
+                <li>Research-backed and credible (not alarmist)</li>
+                <li>Confident and measured tone</li>
+                <li>Never templated or derivative</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Logo & Wordmark -->
+        <section>
+            <h2>Logo & Wordmark</h2>
+
+            <h3>Primary Wordmark</h3>
+            <div class="wordmark-example">
+                <div class="wordmark-text">Supplies Are Limited</div>
+            </div>
+            <p><strong>Font:</strong> Playfair Display, 700 weight, letter-spacing: -0.02em</p>
+            <p><strong>Usage:</strong> Primary brand identifier. Use in headers, mastheads, and hero sections.</p>
+            <p><strong>Minimum size:</strong> 24px (digital), 12mm (print)</p>
+            <p><strong>Minimum clear space:</strong> Equal to the height of the letter 'S' on all sides</p>
+
+            <h3>Logo Icon + Wordmark (Horizontal)</h3>
+            <p><strong>Description:</strong> Icon placed to the left of wordmark. Icon is a geometric shield form with vertical lines suggesting resilience and preparation.</p>
+            <p><strong>Colors:</strong> Icon outline in primary orange (#FF6B35), wordmark in charcoal (#1A1A1A)</p>
+            <p><strong>Spacing:</strong> 16px between icon and wordmark</p>
+            <p><strong>Usage:</strong> Website header, social profiles, email signatures, documentation</p>
+
+            <h3>Logo Icon (Square, Single-Color)</h3>
+            <p><strong>Description:</strong> Geometric shield icon alone, used for favicons, app icons, social avatars</p>
+            <p><strong>Color Options:</strong></p>
+            <ul style="margin-bottom: 24px;">
+                <li>Orange on white/ivory background (primary)</li>
+                <li>White on charcoal background (inverse)</li>
+                <li>Single solid color in any brand color (flexible applications)</li>
+            </ul>
+            <p><strong>Minimum size:</strong> 32px (for clarity at small scales)</p>
+
+            <h3>Monochrome Versions</h3>
+            <p><strong>Black version:</strong> All elements in #1A1A1A (for B&W print, signage)</p>
+            <p><strong>White version:</strong> All elements in white (for dark backgrounds)</p>
+            <p><strong>Usage:</strong> B&W documents, signage, embossing, simple applications</p>
+
+            <div class="note">
+                <h4>Logo Do's & Don'ts</h4>
+                <p><strong>Do:</strong> Maintain minimum clear space; use on clean backgrounds; scale proportionally</p>
+                <p><strong>Don't:</strong> Stretch or distort; rotate; apply effects; use on patterned backgrounds; change colors without approval</p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Color Palette -->
+        <section>
+            <h2>Color Palette</h2>
+
+            <div class="palette-section">
+                <h3>Primary Power Colors (Pecron)</h3>
+                <p>Orange and charcoal convey energy, reliability, and premium positioning. These are the dominant colors for Pecron F5000 communications.</p>
+
+                <div class="color-grid">
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #FF6B35;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Orange</div>
+                            <div class="color-code">HEX: #FF6B35</div>
+                            <div class="color-code">RGB: 255, 107, 53</div>
+                            <div class="color-code">HSL: 19°, 100%, 60%</div>
+                            <div class="color-description">Energetic, commanding. Use for CTAs, headlines, key visual elements.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #1A1A1A;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Charcoal Black</div>
+                            <div class="color-code">HEX: #1A1A1A</div>
+                            <div class="color-code">RGB: 26, 26, 26</div>
+                            <div class="color-code">HSL: 0°, 0%, 10%</div>
+                            <div class="color-description">Primary text and backgrounds. Deep, sophisticated, not pure black.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palette-section">
+                <h3>Secondary Accent Colors</h3>
+                <p>Teal and coral provide visual distinction for Berkey (water) and LETPOT (food) product lines, while maintaining the premium aesthetic.</p>
+
+                <div class="color-grid">
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #3B8E8E;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Sophisticated Teal</div>
+                            <div class="color-code">HEX: #3B8E8E</div>
+                            <div class="color-code">RGB: 59, 142, 142</div>
+                            <div class="color-code">HSL: 180°, 41%, 39%</div>
+                            <div class="color-description">Berkey brand color. Calm, trustworthy, water-related. CTAs and accents for Berkey communications.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #E07856;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Warm Coral</div>
+                            <div class="color-code">HEX: #E07856</div>
+                            <div class="color-code">RGB: 224, 120, 86</div>
+                            <div class="color-code">HSL: 13°, 66%, 61%</div>
+                            <div class="color-description">LETPOT brand color. Organic, warm, growth-oriented. CTAs and accents for LETPOT communications.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palette-section">
+                <h3>Neutral Colors</h3>
+                <p>Carefully selected neutrals provide sophisticated backgrounds and text hierarchy while maintaining warmth.</p>
+
+                <div class="color-grid">
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #F8F7F5;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Warm Ivory</div>
+                            <div class="color-code">HEX: #F8F7F5</div>
+                            <div class="color-code">RGB: 248, 247, 245</div>
+                            <div class="color-code">HSL: 30°, 29%, 96%</div>
+                            <div class="color-description">Primary background. Luxury feel, not cold white. Secondary content areas.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #E8E6E2;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Light Gray</div>
+                            <div class="color-code">HEX: #E8E6E2</div>
+                            <div class="color-code">RGB: 232, 230, 226</div>
+                            <div class="color-code">HSL: 30°, 19%, 90%</div>
+                            <div class="color-description">Borders, dividers, subtle backgrounds. Creates visual separation without harshness.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #9A9490;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Medium Gray</div>
+                            <div class="color-code">HEX: #9A9490</div>
+                            <div class="color-code">RGB: 154, 148, 144</div>
+                            <div class="color-code">HSL: 24°, 8%, 58%</div>
+                            <div class="color-description">Secondary text, captions, muted information. Maintains legibility.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #2D2D2D;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Dark Charcoal</div>
+                            <div class="color-code">HEX: #2D2D2D</div>
+                            <div class="color-code">RGB: 45, 45, 45</div>
+                            <div class="color-code">HSL: 0°, 0%, 18%</div>
+                            <div class="color-description">Secondary text, dark backgrounds. Less harsh than pure black.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palette-section">
+                <h3>Semantic Colors</h3>
+                <p>Status and action indicators. These maintain accessibility while fitting the premium palette.</p>
+
+                <div class="color-grid">
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #4A7C59;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Success Green</div>
+                            <div class="color-code">HEX: #4A7C59</div>
+                            <div class="color-code">RGB: 74, 124, 89</div>
+                            <div class="color-description">Success states, confirmations, positive actions.</div>
+                        </div>
+                    </div>
+
+                    <div class="color-swatch">
+                        <div class="color-preview" style="background-color: #C78B2F;">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Warning Gold</div>
+                            <div class="color-code">HEX: #C78B2F</div>
+                            <div class="color-code">RGB: 199, 139, 47</div>
+                            <div class="color-description">Warnings, cautions, alerts. Balanced warmth and visibility.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Color Usage Guidelines</h3>
+            <p><strong>Pecron F5000 (Power & Emergency):</strong> Lead with orange (#FF6B35) for CTAs, hero sections, and key calls-to-action. Use charcoal for text and supporting elements. Ratio approximately 20% orange, 30% charcoal, 50% neutrals.</p>
+            <p><strong>Big Berkey (Water):</strong> Lead with teal (#3B8E8E) for CTAs and trust-building elements. Use charcoal for text. Ratio approximately 15% teal, 35% charcoal, 50% neutrals.</p>
+            <p><strong>LETPOT (Food & Growth):</strong> Lead with coral (#E07856) for CTAs and lifestyle imagery accents. Use charcoal for text. Ratio approximately 15% coral, 35% charcoal, 50% neutrals.</p>
+            <p><strong>Backgrounds:</strong> Default to white or warm ivory (#F8F7F5) for primary content. Use light gray (#E8E6E2) for secondary content zones to create visual hierarchy.</p>
+            <p><strong>Text:</strong> Primary text always in charcoal (#1A1A1A) on light backgrounds for accessibility. Secondary text in medium gray (#9A9490). Never use text colors with less than 4.5:1 contrast ratio against backgrounds.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Typography -->
+        <section>
+            <h2>Typography</h2>
+
+            <h3>Font Families</h3>
+
+            <div class="component-grid">
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-display); font-size: 32px; font-weight: 700;">Playfair Display</div>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Display Font</div>
+                        <p class="component-description"><strong>Playfair Display</strong> is a serif typeface with mid-century modern influences. Used for headlines, titles, and premium brand statements. Available in weights 400, 600, and 700.</p>
+                        <p class="component-description"><strong>Usage:</strong> H1-H4 headlines, brand statements, landing page hero titles.</p>
+                        <p class="component-description"><strong>Google Fonts:</strong> Yes (reliable web font)</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-body); font-size: 16px;">Inter</div>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Body Font</div>
+                        <p class="component-description"><strong>Inter</strong> is a clean, modern sans-serif optimized for readability. Used for body text, UI elements, and supporting content. Available in weights 400-700.</p>
+                        <p class="component-description"><strong>Usage:</strong> Body text, form labels, button text, captions, lists.</p>
+                        <p class="component-description"><strong>Google Fonts:</strong> Yes (highly recommended)</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div style="font-family: var(--font-mono); font-size: 14px;">IBM Plex Mono</div>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Monospace Font</div>
+                        <p class="component-description"><strong>IBM Plex Mono</strong> is used for technical data, timestamps, code, and special numeric formatting. Available in weights 400-500.</p>
+                        <p class="component-description"><strong>Usage:</strong> Price displays, timestamps, hex codes, technical documentation.</p>
+                        <p class="component-description"><strong>Google Fonts:</strong> Yes</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Type Scale</h3>
+            <p>Consistent sizing maintains visual hierarchy and readability across platforms.</p>
+
+            <div class="type-scale">
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">H1 (56px)</div>
+                        <div class="type-example h1-example">Premium Resilience</div>
+                    </div>
+                    <p class="text-muted">Playfair Display, 700, line-height 1.2. Hero sections, major page titles.</p>
+                </div>
+
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">H2 (40px)</div>
+                        <div class="type-example h2-example">Power Your Life</div>
+                    </div>
+                    <p class="text-muted">Playfair Display, 600, line-height 1.2. Section headings, major dividers.</p>
+                </div>
+
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">H3 (28px)</div>
+                        <div class="type-example h3-example">Always Prepared</div>
+                    </div>
+                    <p class="text-muted">Playfair Display, 600. Subsection headings, card titles.</p>
+                </div>
+
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">H4 (20px)</div>
+                        <div class="type-example h4-example">Water Purity</div>
+                    </div>
+                    <p class="text-muted">Playfair Display, 600. Supporting headings, feature titles.</p>
+                </div>
+
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">Body (16px)</div>
+                        <div class="type-example body-example">Premium products designed for high-income professionals seeking sophisticated preparation.</div>
+                    </div>
+                    <p class="text-muted">Inter, 400, line-height 1.7. Primary body text. Max width 65 characters.</p>
+                </div>
+
+                <div class="type-scale-item">
+                    <div class="type-size">
+                        <div class="type-label">Small (14px)</div>
+                        <div class="type-example caption-example">Supporting text, timestamps, secondary information.</div>
+                    </div>
+                    <p class="text-muted">Inter, 400, line-height 1.6. Captions, labels, tertiary information.</p>
+                </div>
+            </div>
+
+            <h3>Typographic Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Font</th>
+                        <th>Size</th>
+                        <th>Weight</th>
+                        <th>Line Height</th>
+                        <th>Letter Spacing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>H1 (Hero)</td>
+                        <td>Playfair Display</td>
+                        <td>56px</td>
+                        <td>700</td>
+                        <td>1.2</td>
+                        <td>-0.02em</td>
+                    </tr>
+                    <tr>
+                        <td>H2 (Section)</td>
+                        <td>Playfair Display</td>
+                        <td>40px</td>
+                        <td>600</td>
+                        <td>1.2</td>
+                        <td>normal</td>
+                    </tr>
+                    <tr>
+                        <td>H3 (Subsection)</td>
+                        <td>Playfair Display</td>
+                        <td>28px</td>
+                        <td>600</td>
+                        <td>1.3</td>
+                        <td>normal</td>
+                    </tr>
+                    <tr>
+                        <td>H4 (Label)</td>
+                        <td>Inter</td>
+                        <td>16px</td>
+                        <td>600</td>
+                        <td>1.4</td>
+                        <td>0.05em</td>
+                    </tr>
+                    <tr>
+                        <td>Body Text</td>
+                        <td>Inter</td>
+                        <td>16px</td>
+                        <td>400</td>
+                        <td>1.7</td>
+                        <td>normal</td>
+                    </tr>
+                    <tr>
+                        <td>Caption</td>
+                        <td>Inter</td>
+                        <td>14px</td>
+                        <td>400</td>
+                        <td>1.5</td>
+                        <td>normal</td>
+                    </tr>
+                    <tr>
+                        <td>Data/Code</td>
+                        <td>IBM Plex Mono</td>
+                        <td>13px</td>
+                        <td>400</td>
+                        <td>1.6</td>
+                        <td>normal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Layout & Spacing -->
+        <section>
+            <h2>Layout & Spacing System</h2>
+
+            <h3>8px Grid Foundation</h3>
+            <p>All spacing, sizing, and alignment is based on an 8px grid. This ensures visual harmony and scalability across devices.</p>
+            <div class="grid-reference">
+                Reference grid (8px spacing) — use for alignment and sizing decisions
+            </div>
+
+            <h3>Spacing Scale</h3>
+            <p>Consistent spacing values maintain rhythm and hierarchy.</p>
+
+            <div class="spacing-grid">
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 8px; width: 100%;"></div>
+                    <div class="spacing-label">8px (xs)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Micro spacing between related elements.</p>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 16px; width: 100%;"></div>
+                    <div class="spacing-label">16px (sm)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Padding in components, spacing between related items.</p>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 24px; width: 100%;"></div>
+                    <div class="spacing-label">24px (md)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Internal component spacing, group separation.</p>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 32px; width: 100%;"></div>
+                    <div class="spacing-label">32px (lg)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Card padding, section gaps.</p>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 48px; width: 100%;"></div>
+                    <div class="spacing-label">48px (xl)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Major section spacing, major container padding.</p>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-box" style="height: 64px; width: 100%;"></div>
+                    <div class="spacing-label">64px (2xl)</div>
+                    <p style="font-size: 14px; margin: 8px 0 0 0;">Large section breaks, major vertical rhythm.</p>
+                </div>
+            </div>
+
+            <h3>Responsive Breakpoints</h3>
+            <div class="breakpoint-info">
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">Mobile</div>
+                    <div class="breakpoint-value">320px–768px</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">Tablet</div>
+                    <div class="breakpoint-value">768px–1024px</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">Desktop</div>
+                    <div class="breakpoint-value">1024px–1440px</div>
+                </div>
+                <div class="breakpoint-item">
+                    <div class="breakpoint-label">Large</div>
+                    <div class="breakpoint-value">1440px+</div>
+                </div>
+            </div>
+
+            <h3>Margin & Padding Conventions</h3>
+            <p><strong>Container Max-Width:</strong> 1200px (desktop). Maintains readability with 65-character line length for body text.</p>
+            <p><strong>Container Padding:</strong> 64px (desktop), 40px (tablet), 24px (mobile)</p>
+            <p><strong>Section Margins:</strong> 64px vertical between major sections on desktop</p>
+            <p><strong>Card Padding:</strong> 32px (consistent internal spacing)</p>
+            <p><strong>Button Padding:</strong> 14px vertical × 28px horizontal (comfortable touch target, minimum 44px×44px)</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Components -->
+        <section>
+            <h2>Component Library</h2>
+
+            <h3>Buttons</h3>
+            <div class="component-grid">
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-primary">Primary CTA</button>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Primary Button</div>
+                        <p class="component-description">Orange background, white text. Use for main calls-to-action. Background: #FF6B35. On hover, darken to #E85A24.</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-secondary">Secondary Action</button>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Secondary Button</div>
+                        <p class="component-description">Outline style with charcoal border. Use for supporting actions. 2px border.</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-teal">Berkey CTA</button>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Teal Button (Berkey)</div>
+                        <p class="component-description">Teal background (#3B8E8E), white text. Product-specific CTA for Berkey content.</p>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-coral">LETPOT CTA</button>
+                    </div>
+                    <div class="component-info">
+                        <div class="component-name">Coral Button (LETPOT)</div>
+                        <p class="component-description">Coral background (#E07856), white text. Product-specific CTA for LETPOT content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Button States</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>Appearance</th>
+                        <th>Interaction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Default</td>
+                        <td>Full color, readable text</td>
+                        <td>Cursor pointer</td>
+                    </tr>
+                    <tr>
+                        <td>Hover</td>
+                        <td>Slightly darker shade, translateY(-2px)</td>
+                        <td>Indicates interactivity</td>
+                    </tr>
+                    <tr>
+                        <td>Active</td>
+                        <td>Darker shade, no transform</td>
+                        <td>Pressed state feedback</td>
+                    </tr>
+                    <tr>
+                        <td>Disabled</td>
+                        <td>Gray color, opacity 0.5</td>
+                        <td>Cursor not-allowed</td>
+                    </tr>
+                    <tr>
+                        <td>Focus</td>
+                        <td>4px outline in brand color</td>
+                        <td>Keyboard navigation support</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cards</h3>
+            <p>Cards provide visual container for content, with subtle borders and spacing. Use for product cards, testimonials, feature highlights, and content grouping.</p>
+
+            <div class="component-grid">
+                <div class="component-card" style="border: 1px solid var(--color-neutral-light-gray);">
+                    <div class="component-preview" style="padding: 48px 32px;">
+                        <div style="text-align: center;">
+                            <div style="font-family: var(--font-display); font-size: 24px; font-weight: 600; margin-bottom: 12px;">Product Name</div>
+                            <p style="color: var(--text-light); margin: 0;">Key feature highlight or description of the product offering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Card Specifications:</strong></p>
+            <ul style="margin-bottom: 24px;">
+                <li>1px border in light gray (#E8E6E2)</li>
+                <li>4px border radius (subtle roundness)</li>
+                <li>32px padding (internal spacing)</li>
+                <li>White or ivory background</li>
+                <li>Subtle shadow: 0 2px 8px rgba(0, 0, 0, 0.08)</li>
+                <li>No visual effect on hover (optional: 0 4px 12px rgba(0, 0, 0, 0.12) for interactive cards)</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Imagery & Photography -->
+        <section>
+            <h2>Photography & Imagery Direction</h2>
+
+            <h3>Overall Aesthetic</h3>
+            <p>Photography should support our premium positioning with sophisticated, aspirational imagery. The tone is confident and prepared, never panicked or survivalist.</p>
+
+            <h3>Pecron F5000 (Power)</h3>
+            <div class="photo-grid">
+                <div class="photo-directive">
+                    <h4>Product Photography</h4>
+                    <p>Clean, minimalist white backgrounds. Bright, directional lighting highlighting the industrial design. Emphasize the metallic finishes, orange accents, and form factor. Shoot on white sweep or neutral gray backgrounds.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Lifestyle Imagery</h4>
+                    <p>Show Pecron in premium home environments: modern living rooms, tech-forward offices, home media centers. Emphasize confidence and control, not emergency. Warm, professional lighting. Never show panic or crisis scenarios.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Color Grading</h4>
+                    <p>Warm, golden tones. Enhance oranges naturally. Avoid cool blues. Maintain contrast and crisp detail. Professional color grading (think premium product photography).</p>
+                </div>
+            </div>
+
+            <h3>Big Berkey (Water)</h3>
+            <div class="photo-grid">
+                <div class="photo-directive">
+                    <h4>Product Photography</h4>
+                    <p>Clean, bright backgrounds. Water as hero imagery—show water droplets, clarity, purity. Use teal/cool lighting accents. Emphasize the glass and stainless steel construction. Show the filtration element as proof of quality.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Lifestyle Imagery</h4>
+                    <p>Berkey in modern kitchens, dining areas, yoga studios, home gyms. Show family members hydrating, cooking with filtered water, wellness routines. Professional, contemporary home settings. Emphasize health and clarity.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Color Grading</h4>
+                    <p>Cool, clean tones. Enhance teals and aqua naturally. Bright, airy mood. High contrast emphasizing clarity. Professional color grading with emphasis on light and transparency.</p>
+                </div>
+            </div>
+
+            <h3>LETPOT (Food & Gardening)</h3>
+            <div class="photo-grid">
+                <div class="photo-directive">
+                    <h4>Product Photography</h4>
+                    <p>Natural, bright lighting showing lush green plants. White or minimal backgrounds. Emphasize growth and abundance. Show hydroponic detail, LED grow lights, sleek modern design. Fresh, organic feel.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Lifestyle Imagery</h4>
+                    <p>LETPOT in modern kitchens, apartments, office spaces. Show fresh herbs and vegetables being used in cooking. Emphasize year-round abundance, self-sufficiency, and sustainable living. Contemporary, upscale aesthetic.</p>
+                </div>
+                <div class="photo-directive">
+                    <h4>Color Grading</h4>
+                    <p>Warm, organic tones. Enhance greens and coral accents. Natural, sunlit mood. Emphasize vitality and growth. Professional color grading with emphasis on life and abundance.</p>
+                </div>
+            </div>
+
+            <h3>Photography Principles</h3>
+            <ul style="margin-bottom: 24px;">
+                <li><strong>Composition:</strong> Rule of thirds. Leading lines. Asymmetrical balance reflecting mid-century modern design.</li>
+                <li><strong>Lighting:</strong> Bright, directional natural or professional lighting. Avoid harsh shadows. Use fill light to maintain detail.</li>
+                <li><strong>Focus:</strong> Sharp, detailed product/lifestyle shots. Use depth of field selectively to guide attention.</li>
+                <li><strong>Styling:</strong> Minimal props. Premium surfaces (marble, wood, linen). Contemporary styling matching brand aesthetic.</li>
+                <li><strong>Diversity:</strong> Show real people of varied ages and backgrounds using products. Professional models and real customer testimonials equally valued.</li>
+                <li><strong>Technical:</strong> Minimum 2400px width for web use. RAW format for color grading flexibility. Professional retouching maintaining natural appearance.</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Voice & Tone -->
+        <section>
+            <h2>Voice & Tone Guidelines</h2>
+
+            <h3>Brand Voice</h3>
+            <p>Supplies Are Limited communicates with confidence, sophistication, and measured intelligence. Our voice reflects our positioning: premium preparation for high-income professionals.</p>
+
+            <p><strong>Key Characteristics:</strong></p>
+            <ul style="margin-bottom: 24px;">
+                <li><strong>Credible:</strong> Research-backed, specific, transparent. We cite expertise and data.</li>
+                <li><strong>Confident:</strong> No apologies or over-explanation. We know our products work.</li>
+                <li><strong>Measured:</strong> Not alarmist. We acknowledge reality without panic.</li>
+                <li><strong>Sophisticated:</strong> Premium language befitting high-income audience. No condescension.</li>
+                <li><strong>Clear:</strong> Active voice, specific language. We name things by what people understand.</li>
+            </ul>
+
+            <h3>Tone Guidelines</h3>
+            <p><strong>Headlines:</strong> Direct, benefit-focused, confident. "Power Your Independence" not "You Might Need This Someday."</p>
+            <p><strong>Body Copy:</strong> Informative, specific, honest. Explain *why* products matter, not just *that* they matter.</p>
+            <p><strong>CTAs:</strong> Action-oriented, clear outcomes. "Secure Your System Now" not "Click Here."</p>
+            <p><strong>Error States:</strong> Honest, helpful. Explain what happened and how to fix it. "Password must include numbers and uppercase letters" not "Invalid input."</p>
+            <p><strong>Social Media:</strong> Professional yet approachable. Share expertise and insights. Engage thoughtfully, no marketing-speak.</p>
+
+            <h3>Language Examples</h3>
+            <p><strong>Say This:</strong> "Tested to 24-hour operational capacity in emergency scenarios" | <strong>Not This:</strong> "Works during disasters"</p>
+            <p><strong>Say This:</strong> "Filters 6,000+ gallons throughout its lifespan" | <strong>Not This:</strong> "Super filtration"</p>
+            <p><strong>Say This:</strong> "Grows fresh herbs, leafy greens, and vegetables indoors year-round" | <strong>Not This:</strong> "Magical indoor farm"</p>
+            <p><strong>Say This:</strong> "Research-backed resilience for professionals" | <strong>Not This:</strong> "Survival gear for preppers"</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Implementation Guide -->
+        <section>
+            <h2>Implementation Guide</h2>
+
+            <h3>Web Applications</h3>
+            <p><strong>CSS Framework:</strong> Use custom CSS with CSS variables (documented above) or Tailwind with custom config extending brand tokens.</p>
+            <p><strong>Font Loading:</strong> Load Playfair Display and Inter from Google Fonts. Provide fallback stacks for IBM Plex Mono.</p>
+            <p><strong>Color Implementation:</strong> Use CSS variables consistently. Avoid hardcoded hex values in component styles.</p>
+            <p><strong>Responsive Design:</strong> Mobile-first approach. Test at all breakpoints. Maintain accessibility (WCAG AA minimum).</p>
+
+            <h3>Email Templates</h3>
+            <p><strong>Layout:</strong> 600px max-width (mobile-optimized). Generous margins and padding.</p>
+            <p><strong>Font Stack:</strong> Fallback to system fonts (no web fonts in email). Use safe web fonts: Georgia (serif), Arial/Helvetica (sans-serif).</p>
+            <p><strong>Colors:</strong> Inline CSS. Test rendering across email clients.</p>
+            <p><strong>Images:</strong> Optimized for web (compressed, appropriate dimensions). Always include alt text.</p>
+
+            <h3>Social Media Graphics</h3>
+            <p><strong>Dimensions:</strong> Create templates for each platform's native dimensions. Export at 2x scale for retina displays.</p>
+            <p><strong>Text Hierarchy:</strong> Large, readable text. Sufficient color contrast. Legible at thumbnail size.</p>
+            <p><strong>Branding:</strong> Include logo, brand colors, consistent treatment across all graphics.</p>
+
+            <h3>Print Materials</h3>
+            <p><strong>Resolution:</strong> Minimum 300 DPI for final print files.</p>
+            <p><strong>Color Specifications:</strong> CMYK for offset printing. Pantone conversions for premium printing.</p>
+            <p><strong>Fonts:</strong> Use provided Google Fonts or embed as system fonts in PDFs.</p>
+
+            <h3>Accessibility Requirements</h3>
+            <ul style="margin-bottom: 24px;">
+                <li>Color contrast minimum 4.5:1 for text (WCAG AA)</li>
+                <li>Focus states visible for keyboard navigation</li>
+                <li>Alt text on all images (descriptive, concise)</li>
+                <li>Semantic HTML structure</li>
+                <li>Form labels properly associated with inputs</li>
+                <li>Avoid motion and flashing that triggers vestibular issues</li>
+                <li>Sufficient line height and letter spacing for readability</li>
+            </ul>
+
+            <h3>Performance Requirements</h3>
+            <ul style="margin-bottom: 24px;">
+                <li>Page load time under 3 seconds (3G connection)</li>
+                <li>Optimized images (WebP with JPEG fallback)</li>
+                <li>Minimal JavaScript (no unnecessary libraries)</li>
+                <li>CSS-only animations where possible</li>
+                <li>Lazy loading for images below the fold</li>
+            </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Final Notes -->
+        <section>
+            <h2>Final Notes</h2>
+            <p>This brand system establishes a cohesive, distinctive visual identity for Supplies Are Limited across all platforms. The system balances premium aesthetic sophistication with credible, research-backed positioning.</p>
+
+            <p><strong>Key Principles to Remember:</strong></p>
+            <ul style="margin-bottom: 40px;">
+                <li>We are premium preparation, not survivalism</li>
+                <li>Confidence without panic. Intelligence without alarm.</li>
+                <li>Generously spaced, sophisticated layouts—never crowded or templated</li>
+                <li>Specific, credible language—never marketing-speak</li>
+                <li>Three distinct product aesthetics unified by overarching brand system</li>
+                <li>Accessibility and performance are brand values, not afterthoughts</li>
+            </ul>
+
+            <div class="note">
+                <h4>Contact & Approvals</h4>
+                <p>For questions on brand implementation or approvals on new materials, contact the design lead. All major touchpoints should reference this guide before launch.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
